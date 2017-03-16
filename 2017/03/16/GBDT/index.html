@@ -17,7 +17,7 @@
 <!--<![endif]-->
 
 <head>
-  <title>Archives: 2017/3 | Hexo</title>
+  <title>GBDT | Hexo</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -84,7 +84,7 @@
 </head>
 
 <!--
-<body class="home-template">
+<body class="post-template">
 -->
 <body id="index" class="lightnav animsition">
 
@@ -191,108 +191,77 @@
         <!-- ============================ Header & Logo bar =========================== -->
 
 
-      <!-- ============================ Hero Image =========================== -->
-
-<section id="hero" class="scrollme">
-    <div class="container-fluid element-img" style="background: url(/img/bg_img.jpg) no-repeat center center fixed;background-size: cover">
-        <div class="row">
-            <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 vertical-align cover boost text-center">
-                <div class="center-me animateme" data-when="exit" data-from="0" data-to="0.6" data-opacity="0" data-translatey="100">
-                    <div>
-                        
-                        <h2>YOU'VE MADE A <span>BRAVE</span> DECISION, WELCOME.</h2>
-                        <p></p>
-                        
-                        <h2></h2>
-                        <p>每一个不曾起舞的日子都是对生命的辜负。</p>
-                        
-
-                    </div>
-                </div>
-            </div>
-            <!-- // .col-md-12 -->
-        </div>
-        <div class="herofade beige-dk"></div>
-    </div>
-</section>
-
-<!-- Height spacing helper -->
-<div class="heightblock"></div>
-<!-- // End height spacing helper -->
-
-<!-- ============================ END Hero Image =========================== -->
-
-
-
-
-<section id="services">
+      
+<section id="intro">
     <div class="container">
-        <div class="row">
-            <div class="col-md-10 col-md-offset-1">
-                <div class="row boxes">
-                    
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/2017/03/16/GBDT/">GBDT</a></h4>
-                            
-                            <p><time datetime="2017-03-16T08:58:20.000Z"><a href="/2017/03/16/GBDT/">2017-03-16</a></time></p>
-                        </div>
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/2017/03/08/阿里巴巴阿里妈妈广告部门面试复盘/">阿里巴巴阿里妈妈广告部门面试复盘</a></h4>
-                            
-                            <p><time datetime="2017-03-08T00:57:32.000Z"><a href="/2017/03/08/阿里巴巴阿里妈妈广告部门面试复盘/">2017-03-08</a></time></p>
-                        </div>
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/2017/03/08/面试复盘：网易-搜狗/">面试复盘：网易+搜狗</a></h4>
-                            
-                            <p><time datetime="2017-03-08T00:56:00.000Z"><a href="/2017/03/08/面试复盘：网易-搜狗/">2017-03-08</a></time></p>
-                        </div>
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/2017/03/08/腾讯广点通数据挖掘岗实习生面试复盘/">腾讯广点通数据挖掘岗实习生面试复盘</a></h4>
-                            
-                            <p><time datetime="2017-03-08T00:54:39.000Z"><a href="/2017/03/08/腾讯广点通数据挖掘岗实习生面试复盘/">2017-03-08</a></time></p>
-                        </div>
-                    
-                        
-                            </div><div class="row boxes">
-                            
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/2017/03/08/面试非算法知识点/">面试非算法知识点</a></h4>
-                            
-                            <p><time datetime="2017-03-08T00:49:29.000Z"><a href="/2017/03/08/面试非算法知识点/">2017-03-08</a></time></p>
-                        </div>
-                    
-                </div>
-            </div>    
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2017-03-16T08:58:20.000Z" itemprop="datePublished">
+          2017-03-16
+      </time>
+    
+    
+    | 
+    <a href='/tags/Machine-Learning/'>Machine Learning</a>
+    
+    
+</span>
+                <h1>GBDT</h1>
+            </div>
         </div>
-    </div>
-</section> 
+        <div class="col-md-8 col-md-offset-2">
+      		<p>本文总结自知乎专栏文章：</p>
+<p><a href="https://zhuanlan.zhihu.com/p/25705586" target="_blank" rel="external">Learn R | GBDT of Data Mining</a></p>
+<h3 id="是啥"><a href="#是啥" class="headerlink" title="是啥"></a>是啥</h3><p>GBDT（Gradient Boosting Decision Tree）是一种基于迭代所构造的决策树算法。该算法<strong>生成多棵决策树，并将所有树的结果进行汇总来得出结果</strong>，将决策树和集成思想进行了有效的融合。</p>
+<h3 id="三个重点"><a href="#三个重点" class="headerlink" title="三个重点"></a>三个重点</h3><ol>
+<li>GBDT中的DT是回归树而不是决策树</li>
+<li>GB–梯度提升</li>
+<li>GBDT中的shrinkage–缩减</li>
+</ol>
+<h4 id="GBDT之回归树"><a href="#GBDT之回归树" class="headerlink" title="GBDT之回归树"></a>GBDT之回归树</h4><p>GBDT中用的决策树并不是分类决策树，而是回归决策树。GBDT累加所有树的结果作为最终结果。</p>
+<p>作为对比，简要回顾下分类树的运行过程：以ID3为例，穷举每一个属性特征的信息增益值，每一次都选取使信息增益最大的特征进行分枝，直到分类完成或达到预设的终止条件，实现决策树的递归构建。</p>
+<p>回归树的运行流程与分类树基本类似，但有以下两点不同之处：</p>
+<ul>
+<li>第一，回归树的每个节点得到的是一个预测值而非分类树式的样本计数，假设在某一棵树的某一节点使用了年龄进行分枝（并假设在该节点上人数&gt;1），那么这个预测值就是属于这个节点的所有人年龄的平均值。</li>
+<li>第二，在分枝节点的选取上，回归树并没有选用最大熵值来作为划分标准，而是使用了最小化均方差，即\(\frac{\sum_{i=1}^{n}{} (x_i-\bar{x} )^2}{n}\) 。这很好理解，被预测出错的次数越多，错的越离谱，均方差就越大，通过最小化均方差也就能够找到最靠谱的分枝依据。</li>
+</ul>
+<blockquote>
+<p>一般来讲，回归树的分枝不太可能实现每个叶子节点上的属性值都唯一，更多的是达到我们预设的终止条件即可（例如叶子个数上限），这样势必会存在多个属性取值，那么该节点处的预测值自然就为基于这些样本所得到的平均值了。</p>
+</blockquote>
+<h4 id="GBDT之梯度提升"><a href="#GBDT之梯度提升" class="headerlink" title="GBDT之梯度提升"></a>GBDT之梯度提升</h4><p><strong>梯度提升是一种理念而非算法，其基本思想是沿着梯度方向训练一系列弱分类器并以一定的权重组合起来，形成最终的强分类器。</strong></p>
+<p>这一系列弱分类器的训练方式便是GBDT的核心所在：<strong>每一棵树学习的是之前所有树结论和的残差</strong></p>
+<blockquote>
+<p>“Boosting，迭代，即通过迭代多棵树来共同决策。这怎么实现呢？难道是每棵树独立训练一遍，比如A这个人，第一棵树认为是10岁，第二棵树认为是0岁，第三棵树认为是20岁，我们就取平均值10岁做最终结论？当然不是！且不说这是投票方法并不是GBDT，只要训练集不变，独立训练三次的三棵树必定完全相同，这样做完全没有意义。之前说过，GBDT是把所有树的结论累加起来做最终结论的，所以可以想到每棵树的结论并不是年龄本身，而是年龄的一个累加量。GBDT的核心就在于，每一棵树学的是之前所有树结论和的残差，这个残差就是一个加预测值后能得真实值的累加量。比如A的真实年龄是18岁，但第一棵树的预测年龄是12岁，差了6岁，即残差为6岁。那么在第二棵树里我们把A的年龄设为6岁去学习，如果第二棵树真的能把A分到6岁的叶子节点，那累加两棵树的结论就是A的真实年龄；如果第二棵树的结论是5岁，则A仍然存在1岁的残差，第三棵树里A的年龄就变成1岁，继续学。这就是Gradient Boosting在GBDT中的意义。”</p>
+</blockquote>
+<p>关于梯度提升的算法推导，请看李航老师《统计学习方法》中8.3节，提升树。</p>
+<h4 id="GBDT之shrinkage"><a href="#GBDT之shrinkage" class="headerlink" title="GBDT之shrinkage"></a>GBDT之shrinkage</h4><blockquote>
+<p>Shrinkage是GBDT的第三个基本概念，中文含义为“缩减”。它的基本思想就是：每次走一小步逐渐逼近结果的效果，要比每次迈一大步很快逼近结果的方式更容易避免过拟合。换句话说缩减思想不完全信任每一个棵残差树，它认为每棵树只学到了真理的一小部分，累加的时候只累加一小部分，只有通过多学几棵树才能弥补不足。</p>
+</blockquote>
+<p>Shrinkage仍然以残差作为学习目标，但对于残差学习出来的结果，只累加一小部分（step*残差）逐步逼近目标，step一般都比较小，如0.01~0.001（注意该step非gradient的step），导致各个树的残差是渐变的而不是陡变的。直觉上这也很好理解，不像直接用残差一步修复误差，而是只修复一点点，其实就是把大步切成了很多小步。本质上，Shrinkage为每棵树设置了一个weight，累加时要乘以这个weight，但和Gradient并没有关系。这个weight就是step。就像Adaboost一样，Shrinkage能减少过拟合发生也是经验证明的，目前还没有看到从理论的证明。</p>
+<h5 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h5><p><a href="http://blog.csdn.net/w28971023/article/details/8240756" target="_blank" rel="external">GBDT（MART） 迭代决策树入门教程 | 简介</a></p>
+<p><a href="http://www.cnblogs.com/maybe2030/p/4734645.html" target="_blank" rel="external">决策树与迭代决策树（GBDT）</a></p>
 
-<section id="statement">
-    <div class="container text-center wow fadeInUp" data-wow-delay="0.5s">
-        <div class="row">
-            <p>Everything takes time.</p>
+            <div class="clearfix"></div>
+            <hr class="nogutter">
         </div>
+        <nav class="pagination" role="pagination">
+    
+    
+    <a class="pull-right" href="/2017/03/08/阿里巴巴阿里妈妈广告部门面试复盘/">
+        阿里巴巴阿里妈妈广告部门面试复盘 →
+    </a>
+    
+</nav>
+
+        <div class="duoshuo">
+
+
+</div>
     </div>
 </section>
+
+
       
 <!-- ============================ Footer =========================== -->
 
