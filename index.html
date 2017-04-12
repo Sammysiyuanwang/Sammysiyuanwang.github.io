@@ -17,7 +17,7 @@
 <!--<![endif]-->
 
 <head>
-  <title>Prestige</title>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><title>Prestige</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -80,12 +80,12 @@
   
 
   
-  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
 <!--
 <body class="home-template">
--->
+<!-- hexo-inject:begin --><!-- hexo-inject:end -->-->
 <body id="index" class="lightnav animsition">
 
       <!-- ============================ Off-canvas navigation =========================== -->
@@ -225,6 +225,45 @@
 
 <section id="intro">
     <div class="container">
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/2017/04/12/Linked-List/">Linked List</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2017-04-12T13:32:55.000Z" itemprop="datePublished">
+          2017-04-12
+      </time>
+    
+    
+    | 
+    <a href='/tags/Algorithm/'>Algorithm</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        当链表的结构发生变化时，就需要使用dummy node，dummy node的值不重要，主要作用在放在链表头部，返回链表头结点是可以直接返回dummy.next;
+修改链表顺序206. Reverse Linked List
+最基本的链表翻转
+
+1234567891011121314151617public class Solution &#123;    public ListNode reverseList(ListNode hea
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2017/04/12/Linked-List/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
         
         <div class="row">
             <div class="col-md-8 col-md-offset-2 opening-statement">
@@ -618,44 +657,6 @@ static 和 final:final可以理解为最终的，如果你不想一个变量在�
             </div>
         </div>
         
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2017/01/01/时间都去哪儿了/">时间都去哪儿了</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2017-01-01T10:33:44.000Z" itemprop="datePublished">
-          2017-01-01
-      </time>
-    
-    
-    | 
-    <a href='/tags/随笔/'>随笔</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        时间都去哪儿了？？
-说实话，总感觉2016就在眼前，2015就像昨天，一切都是从前的样子，时间表就猝不及防的跳到了2017。有点失落，有点迷茫也会有点期待。只是不知不觉自己就来到了24岁这个年纪，真的不太好适应。
-因为在自己深度的潜意识里，还是个屁大的孩子，还没有上完学，收入还得靠父母，一切感觉都存留在高中时的惯性上面，却不知不觉自己已经到了第二个本命年。
-还记的以前玩FM的时候，我最喜欢挖掘年轻的小牛来培养，享受把十七八岁的小牛培养成
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2017/01/01/时间都去哪儿了/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
         <nav class="pagination" role="pagination">
           
           <a class="pull-right" href="/page/2/">Older Posts →</a>
@@ -755,7 +756,24 @@ $('#intro').find('img').each(function(){
         directionNav: true
       });
     });
+</script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
 </script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
 
 </body>
 </html>

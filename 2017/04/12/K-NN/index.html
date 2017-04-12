@@ -17,7 +17,7 @@
 <!--<![endif]-->
 
 <head>
-  <title>K-NN | Prestige</title>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><title>K-NN | Prestige</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -80,12 +80,12 @@
   
 
   
-  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
 <!--
 <body class="post-template">
--->
+<!-- hexo-inject:begin --><!-- hexo-inject:end -->-->
 <body id="index" class="lightnav animsition">
 
       <!-- ============================ Off-canvas navigation =========================== -->
@@ -234,8 +234,8 @@
 <li>减少K的值，使模型变得复杂，对近邻更加敏感，如果近邻点是噪声，容易判错，因此容易过拟合。</li>
 <li>一般采取交叉验证法来确定K的值。</li>
 </ul>
-<h3 id="三要素之距离度量"><a href="#三要素之距离度量" class="headerlink" title="三要素之距离度量"></a>三要素之距离度量</h3><p>常用距离：(l为第l个特征)</p>
-<p>\[L_p=(x_i,y<em>i)=(\sum^n</em>{l=1}{|x^{(l)}_i-x^{(l)}_j|}^p)^{\frac{1}{p}}\]</p>
+<h3 id="三要素之距离度量"><a href="#三要素之距离度量" class="headerlink" title="三要素之距离度量"></a>三要素之距离度量</h3><p>常用距离：($l$为第$l$个特征)</p>
+<p>$$L_p=(x_i,y<em>i)=(\sum^n</em>{l=1}{|x^{(l)}_i-x^{(l)}_j|}^p)^{\frac{1}{p}}$$</p>
 <p>当p=2时，为欧式距离：</p>
 <p>\[L_2=(x_i,y<em>i)=(\sum^n</em>{l=1}{|x^{(l)}_i-x^{(l)}_j|}^2)^{\frac{1}{2}}\]</p>
 <p>当p=1时，为曼哈顿距离：</p>
@@ -248,6 +248,10 @@
             <hr class="nogutter">
         </div>
         <nav class="pagination" role="pagination">
+    
+    <a class="pull-left" href="/2017/04/12/Linked-List/" style="float: left;">
+        ← Linked List
+    </a>
     
     
     <a class="pull-right" href="/2017/04/07/网易传媒技术部数据挖掘面试复盘/">
@@ -348,7 +352,24 @@ $('#intro').find('img').each(function(){
         directionNav: true
       });
     });
+</script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
 </script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
 
 </body>
 </html>
