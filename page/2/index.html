@@ -42,7 +42,7 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="null" class="js-avatar">
+			<img src="img/touxiang1.jpg" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">Sammy Wang</a></h1>
@@ -55,6 +55,12 @@
 				<li><a href="/">主页</a></li>
 	        
 				<li><a href="/tags/随笔/">随笔</a></li>
+	        
+				<li><a href="/tags/MachineLearning/">Machine Learning</a></li>
+	        
+				<li><a href="/tags/Algorithm/">Algorithm</a></li>
+	        
+				<li><a href="/tags/面试复盘/">面试</a></li>
 	        
 			</ul>
 		</nav>
@@ -84,6 +90,8 @@
 		        
 					<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
 		        
+					<a class="mail" target="_blank" href="/sammy.siyuan@gmail.com" title="mail"><i class="icon-mail"></i></a>
+		        
 			</div>
 		</nav>
 	</header>		
@@ -100,13 +108,19 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="null" class="js-avatar">
+				<img src="img/touxiang1.jpg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">Sammy Wang</h1>
 			</hgroup>
 			
 			
+			
+				
+			
+				
+			
+				
 			
 				
 			
@@ -125,16 +139,24 @@
 			        
 						<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
 			        
+						<a class="mail" target="_blank" href="/sammy.siyuan@gmail.com" title="mail"><i class="icon-mail"></i></a>
+			        
 				</div>
 			</nav>
 
 			<nav class="header-menu js-header-menu">
-				<ul style="width: 50%">
+				<ul style="width: 70%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
+					<li style="width: 20%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/tags/随笔/">随笔</a></li>
+					<li style="width: 20%"><a href="/tags/随笔/">随笔</a></li>
+		        
+					<li style="width: 20%"><a href="/tags/MachineLearning/">Machine Learning</a></li>
+		        
+					<li style="width: 20%"><a href="/tags/Algorithm/">Algorithm</a></li>
+		        
+					<li style="width: 20%"><a href="/tags/面试复盘/">面试</a></li>
 		        
 				</ul>
 			</nav>
@@ -171,7 +193,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="面试知识点"><a href="#面试知识点" class="headerlink" title="面试知识点"></a>面试知识点</h2><h3 id="Programming-language"><a href="#Programming-language" class="headerlink" title=" Programming language "></a><div align="center"> Programming language <div></div></div></h3><h4 id="java8特性："><a href="#java8特性：" class="headerlink" title="java8特性："></a>java8特性：</h4><h4 id="java-garbage-collection"><a href="#java-garbage-collection" class="headerlink" title="java garbage collection"></a>java garbage collection</h4><p>要记住的三点：</p>
+        <h2 id="面试知识点"><a href="#面试知识点" class="headerlink" title="面试知识点"></a>面试知识点</h2><h3 id="Programming-language"><a href="#Programming-language" class="headerlink" title=" Programming language "></a><div align="center"> Programming language <div></h3><h4 id="java8特性："><a href="#java8特性：" class="headerlink" title="java8特性："></a>java8特性：</h4><h4 id="java-garbage-collection"><a href="#java-garbage-collection" class="headerlink" title="java garbage collection"></a>java garbage collection</h4><p>要记住的三点：</p>
 <ol>
 <li>对象有可能不被垃圾回收</li>
 <li>垃圾回收并不等于“析构”</li>
@@ -179,126 +201,9 @@
 </ol>
 <p><code>finalize()</code>方法</p>
 <p><code>system.gc()</code>:强制垃圾回收，但也只是向系统提一个申请，并不确定可以垃圾回收</p>
-<h4 id="static-和-final"><a href="#static-和-final" class="headerlink" title="static 和 final:"></a>static 和 final:</h4><p>final可以理解为最终的，如果你不想一个变量在后期被改变那么就用final修饰，比如你的实际身高是不变的。</p>
-<p>static的一个好处就是可以通过类名直接访问变量，大部分用在需要在多个方法中共享的时候。</p>
-<p>static修饰的属性强调它们只有一个，final修饰的属性表明是一个常数（创建后不能被修改）。static final修饰的属性表示一旦给值，就不可修改，并且可以通过类名访问。</p>
-<p>对于基本类型数据，用final会使数值恒定不变（创建后不能被修改）；但是对于引用，final会使引用恒定不变（进行声明时，必须将句柄初始化到一个具体的对象。而且不能再将句柄指向另一个对象）。但是，对象的本身是可以修改的。</p>
-<p>static final域占据一段不能改变的存储空间。</p>
-<p><strong>static可以修饰：属性，方法，代码段，内部类（静态内部类或嵌套内部类）</strong></p>
-<pre><code>static修饰的属性的初始化在编译期（类加载的时候），初始化后能改变。
-
-static修饰的属性所有对象都只有一个值。
-
-static修饰的属性强调它们只有一个。
-
-static修饰的属性、方法、代码段跟该类的具体对象无关，不创建对象也能调用static修饰的属性、方法等
-
-static和“this、super”势不两立，static跟具体对象无关，而this、super正好跟具体对象有关。
-
-static不可以修饰局部变量。
-</code></pre><h4 id="什么是reference"><a href="#什么是reference" class="headerlink" title="什么是reference"></a>什么是reference</h4><p>java中一切都被视为对象，但是操纵的时候并不是操纵对象本身，而是操纵对象的一个标识符，这个标识符就是引用(reference).可以有引用，但是并不一定有对象与它关联<br>引用类似于c++的指针<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">String s = new String(&quot;abcd&quot;);</div><div class="line">//s就是新创建的这个对象的一个引用</div></pre></td></tr></table></figure></p>
-<h4 id="nums-null-和-nums-length-0-有什么区别"><a href="#nums-null-和-nums-length-0-有什么区别" class="headerlink" title="nums==null 和 nums.length==0 有什么区别"></a>nums==null 和 nums.length==0 有什么区别</h4><p>长度为0的数组<code>int[] arr = new int[0]</code>，也称为空数组，虽然<code>arr</code>长度为0，但是依然是一个对象</p>
-<p><code>null</code>数组，<code>int[] arr = null</code>；<code>arr</code>是一个数组类型的空引用。</p>
-<h4 id="访问权限"><a href="#访问权限" class="headerlink" title="访问权限"></a>访问权限</h4><ul>
-<li>如果没有任何修饰词，为包访问权限(有时也称为friendly)，它可以被当前包中的所有其他类访问，但是对这个包之外的所有类，均为 private</li>
-<li><strong>public</strong>, 所有人都能访问</li>
-<li><strong>private</strong>, 除了包含该成员的类之外，其他任何类都不能访问</li>
-<li><strong>protected</strong>, 跟继承有关，派生类可以访问。也有包访问权限，相同包内的其他类可以访问protected元素</li>
-</ul>
-<hr>
-<h3 id="Operating-System"><a href="#Operating-System" class="headerlink" title=" Operating System "></a><div align="center"> Operating System <div></div></div></h3><h4 id="进程与线程的区别"><a href="#进程与线程的区别" class="headerlink" title="进程与线程的区别"></a>进程与线程的区别</h4><p>进程拥有一个完整的虚拟地址空间，不依赖于线程而独立存在；反之，线程是进程的一部分，没有自己的地址空间，与进程内的其他线程一起共享分配给该进程的所有资源。</p>
-<blockquote>
-<p>开个QQ，开了一个进程；开了迅雷，开了一个进程。<br>在QQ的这个进程里，传输文字开一个线程、传输语音开了一个线程、弹出对话框又开了一个线程。</p>
-<p>所以运行某个软件，相当于开了一个进程。在这个软件运行的过程里（在这个进程里），多个工作支撑的完成QQ的运行，那么这“多个工作”分别有一个线程。</p>
-<p>所以一个进程管着多个线程。</p>
-</blockquote>
-<h4 id="什么是锁mutex"><a href="#什么是锁mutex" class="headerlink" title="什么是锁mutex"></a>什么是锁mutex</h4><h4 id="什么是信号量"><a href="#什么是信号量" class="headerlink" title="什么是信号量"></a>什么是信号量</h4><p>信号量(Semaphore)– 相当一个信号灯，程序里是一个非负整数，表示状态.<br>在多线程里可以用来保护两个或多个关键代码段，这些关键代码段不能并发调用。</p>
-<h4 id="什么是栈溢出"><a href="#什么是栈溢出" class="headerlink" title="什么是栈溢出"></a>什么是栈溢出</h4><blockquote>
-<p>栈溢出是由于C语言系列没有内置检查机制来确保复制到缓冲区的数据不得大于缓冲区的大小，因此当这个数据足够大的时候，将会溢出缓冲区的范围。</p>
-<p>在Python中，函数调用是通过栈（stack）这种数据结构实现的，每当进入一个函数调用，栈就会加一层栈帧，每当函数返回，栈就会减一层栈帧。由于栈的大小不是无限的，所以，递归调用的次数过多，会导致栈溢出。</p>
-</blockquote>
-<h4 id="不同存储结构的速度量级（磁盘、SSD、内存、L1-cache）"><a href="#不同存储结构的速度量级（磁盘、SSD、内存、L1-cache）" class="headerlink" title="不同存储结构的速度量级（磁盘、SSD、内存、L1 cache）"></a>不同存储结构的速度量级（磁盘、SSD、内存、L1 cache）</h4><h4 id="什么是IO"><a href="#什么是IO" class="headerlink" title="什么是IO"></a>什么是IO</h4><p>input/output 输入输出地址</p>
-<hr>
-<h3 id="Object-Oriented-Design"><a href="#Object-Oriented-Design" class="headerlink" title=" Object Oriented Design "></a><div align="center"> Object Oriented Design <div></div></div></h3><h4 id="什么是继承"><a href="#什么是继承" class="headerlink" title="什么是继承"></a>什么是继承</h4><p>继承是面向对象最显著的一个特性。继承是从已有的类中派生出新的类，新的类能吸收已有类的数据属性和行为，并能扩展新的能力。</p>
-<h4 id="什么是单例Singleton"><a href="#什么是单例Singleton" class="headerlink" title="什么是单例Singleton"></a>什么是单例Singleton</h4><p>java模式之单例模式：<br>单例模式确保一个类只有一个实例，自行提供这个实例并向整个系统提供这个实例。</p>
-<p>特点：</p>
-<ol>
-<li>一个类只能有一个实例</li>
-<li>自己创建这个实例</li>
-<li>整个系统都要使用这个实例</li>
-</ol>
-<h4 id="什么是工厂模式-Factory"><a href="#什么是工厂模式-Factory" class="headerlink" title="什么是工厂模式 Factory"></a>什么是工厂模式 Factory</h4><hr>
-<h3 id="Network"><a href="#Network" class="headerlink" title=" Network "></a><div align="center"> Network <div></div></div></h3><h4 id="什么是Socket"><a href="#什么是Socket" class="headerlink" title="什么是Socket"></a>什么是Socket</h4><p>我们经常把socket翻译为套接字，socket是在应用层和传输层之间的一个抽象层，它把TCP/IP层复杂的操作抽象为几个简单的接口供应用层调用已实现进程在网络中通信。</p>
-<p>socket就是网络连接的端点。就像一根网线，一头连到路由器，一头连到电脑。这两端就是socket。</p>
-<p>socket编程就是利用一些函数开发网络应用。这些函数都与socket接口有关。</p>
-<p>socket接口可以在各种系统上使用，比如linux，windows，mac。</p>
-<p>从开发的角度看，socket类似文件。</p>
-<p>这与开发文件读写程序时你打开的文件类似，只不过这是一个socket文件。</p>
-<p>socket的结构<br>socket的结构很简单，只有三个元素，<strong>协议，端口号，IP地址</strong>。</p>
-<h4 id="TCP-IP三次握手"><a href="#TCP-IP三次握手" class="headerlink" title="TCP/IP三次握手"></a>TCP/IP三次握手</h4><p><a href="http://blog.csdn.net/whuslei/article/details/6667471/" target="_blank" rel="external">参考博客</a></p>
-<p>首先Client端发送连接请求报文，Server段接受连接后回复ACK报文，并为这次连接分配资源。Client端接收到ACK报文后也向Server段发生ACK报文，并分配资源，这样TCP连接就建立了。</p>
-<p>终端连接的四次挥手：</p>
-<p>假设Client端发起中断连接请求，也就是发送FIN报文。Server端接到FIN报文后，意思是说”我Client端没有数据要发给你了”，但是如果你还有数据没有发送完成，则不必急着关闭Socket，可以继续发送数据。所以你先发送ACK，”告诉Client端，你的请求我收到了，但是我还没准备好，请继续你等我的消息”。这个时候Client端就进入FIN_WAIT状态，继续等待Server端的FIN报文。当Server端确定数据已发送完成，则向Client端发送FIN报文，”告诉Client端，好了，我这边数据发完了，准备好关闭连接了”。Client端收到FIN报文后，”就知道可以关闭连接了，但是他还是不相信网络，怕Server端不知道要关闭，所以发送ACK后进入TIME_WAIT状态，如果Server端没有收到ACK则可以重传。“，Server端收到ACK后，”就知道可以断开连接了”。Client端等待了2MSL后依然没有收到回复，则证明Server端已正常关闭，那好，我Client端也可以关闭连接了。Ok，TCP连接就这样关闭了！</p>
-<h4 id="什么是HTTP"><a href="#什么是HTTP" class="headerlink" title="什么是HTTP"></a>什么是HTTP</h4><p>HTTP（Hypertext Transfer Protocol），即超文本传输协议。是WWW浏览器和WWW服务器之间的应用层通讯协议。HTTP协议是基于TCP/IP之上的协议，它不仅保证正确传输超文本文档，还确定传输文档中的哪一部分，以及哪一部分内容首先显示（如文本先与图形）等等。</p>
-<h4 id="什么是API"><a href="#什么是API" class="headerlink" title="什么是API"></a>什么是API</h4><p>API（Application Programming Interface,应用程序编程接口）是一些预先定义的函数，目的是提供应用程序与开发人员基于某软件或硬件得以访问一组例程的能力，而又无需访问源码，或理解内部工作机制的细节。</p>
-<h4 id="TCP-和-UDP有什么区别"><a href="#TCP-和-UDP有什么区别" class="headerlink" title="TCP 和 UDP有什么区别"></a>TCP 和 UDP有什么区别</h4><p>TCP（Transmission Control Protocol，传输控制协议）是基于连接的协议，也就是说，在正式收发数据前，必须和对方建立可靠的连接。</p>
-<p>UDP（User Data Protocol，用户数据报协议）是与TCP相对应的协议。它是面向非连接的协议，它不与对方建立连接，而是直接就把数据包发送过去！ UDP适用于一次只传送少量数据、对可靠性要求不高的应用环境。</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>TCP</th>
-<th>UDP</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>是否连接</td>
-<td>面向连接</td>
-<td>面向非连接</td>
-</tr>
-<tr>
-<td>传输可靠性</td>
-<td>可靠</td>
-<td>不可靠</td>
-</tr>
-<tr>
-<td>应用场合</td>
-<td>传输大量数据</td>
-<td>少量数据</td>
-</tr>
-<tr>
-<td>速度</td>
-<td>慢</td>
-<td>快</td>
-</tr>
-</tbody>
-</table>
-<hr>
-<h3 id="Database"><a href="#Database" class="headerlink" title="Database"></a><div align="center">Database<div></div></div></h3><h4 id="mysql"><a href="#mysql" class="headerlink" title="mysql"></a>mysql</h4><ul>
-<li><strong>foreigh key：</strong></li>
-</ul>
-<p>一个表中的 FOREIGN KEY 指向另一个表中的 PRIMARY KEY。</p>
-<p>FOREIGN KEY 约束用于预防破坏表之间连接的动作。</p>
-<p>FOREIGN KEY 约束也能防止非法数据插入外键列，因为它必须是它指向的那个表中的值之一。</p>
-<ul>
-<li><strong>inner join, outer join:</strong></li>
-</ul>
-<p>inner join 查询的是只有两表的字段的值完全相等的</p>
-<p>left outer join 是以左边表为基准，即使右表没有匹配，也从左表返回所有的行</p>
-<p>right outer join 以右边表为基准</p>
-<h4 id="多对多关系怎么设计"><a href="#多对多关系怎么设计" class="headerlink" title="多对多关系怎么设计"></a>多对多关系怎么设计</h4><p>在多对多关系中，A 表中的一行可以匹配 B 表中的多行，反之亦然。要创建这种关系，需要定义第三个表，称为结合表，它的主键由 A 表和 B 表的外部键组成。例如，authors 和 titles 表具有多对多关系，这是由于这些表都与titleauthors 表具有一对多关系。titleauthors 表的主键是 au_id 列（authors 表的主键）和 title_id 列（titles 表的主键）的组合。</p>
-<h4 id="SQL-与-NoSQL的区别"><a href="#SQL-与-NoSQL的区别" class="headerlink" title="SQL 与 NoSQL的区别"></a>SQL 与 NoSQL的区别</h4><p>关系型数据库中的表都是存储一些格式化的数据结构，每个元组字段的组成都一样，即使不是每个元组都需要所有的字段，但数据库会为每个元组分配所有的字段，这样的结构可以便于表与表之间进行连接等操作，但从另一个角度来说它也是关系型数据库性能瓶颈的一个因素。而非关系型数据库以键值对存储，它的结构不固定，每一个元组可以有不一样的字段，搜索每个元组可以根据需要增加一些自己的键值对，这样就不会局限于固定的结构，可以减少一些时间和空间的开销。</p>
-<p>NoSQL特点： 它们可以处理超大量的数据。 它们运行在便宜的PC服务器集群上。 它们击碎了性能瓶颈。 没有过多的操作。</p>
-<h4 id="什么是Transaction"><a href="#什么是Transaction" class="headerlink" title="什么是Transaction"></a>什么是Transaction</h4><p>事务提供了一种机制，可用来将一系列数据库更改归入一个逻辑操作。更改数据库后，所做的更改可以作为一个单元进行提交或取消。事务可确保遵循原子性、一致性、隔离性和持续性（ACID）这几种属性，以使数据能够正确地提交到数据库中。 只要事务中一个操作行为失败，整个事务就会失败。</p>
-<h4 id="什么是ACID"><a href="#什么是ACID" class="headerlink" title="什么是ACID"></a>什么是ACID</h4><p>一个事务本质上有四个特点ACID：</p>
-<ul>
-<li>Atomicity原子性</li>
-<li>Consistency一致性</li>
-<li>Isolation隔离性</li>
-<li>Durability耐久性</li>
-</ul>
-
+        
+          <a class="article-more-a" href="/2017/03/08/面试非算法知识点/#more">more >></a>
+        
       
 
       
@@ -363,21 +268,9 @@ static不可以修饰局部变量。
 <p>说实话，总感觉2016就在眼前，2015就像昨天，一切都是从前的样子，时间表就猝不及防的跳到了2017。有点失落，有点迷茫也会有点期待。只是不知不觉自己就来到了24岁这个年纪，真的不太好适应。</p>
 <p>因为在自己深度的潜意识里，还是个屁大的孩子，还没有上完学，收入还得靠父母，一切感觉都存留在高中时的惯性上面，却不知不觉自己已经到了第二个本命年。</p>
 <p>还记的以前玩FM的时候，我最喜欢挖掘年轻的小牛来培养，享受把十七八岁的小牛培养成世界级球星的成就感。那个时候自己用上帝视角看着一群又一群的球员，想的最多的估计就是：这人24了，老了。。。身体练不出来了，技术也够呛了。看到20岁及以下的小将就会兴奋，觉得，嗯，这球员大有可为，练练试试。。。然而当自己也猛的来到24岁的年纪，懵懵的发现，24就老了吗，并没有把，好像很多事情才刚刚开始，很多事情还没有开始，好像另一段全新的人生才正准备起步，好像依然大有可为啊。</p>
-<p>然而好多时候又真真切切的感受到老了。得益于我的两个哥哥，我从挺小就开始看NBA和足球了。所以我记得最牢印象最深的那批球星，确确实实都老的老，退役的退役了。亨利，舍甫琴科，劳尔，贝克汉姆，齐达内，皮尔洛，加图索，皮耶罗，特雷泽盖，维埃拉，哈维，伊涅斯塔，大罗小罗，这些曾经那么辉煌的名字，现在都归于沉寂。C罗，梅西，小法，范佩西，罗本，里贝里，比利亚，托雷斯，卡卡，伊布，这些当年被称作小牛亦或是金童的人，现在都到了职业生涯的末年。2016对于C罗是完美的一年，欧冠欧洲杯金球奖加冕，彰显了他的伟大。然而当主持人念出，31岁的C罗的时候，我茫然失措，原来当年那个灵动的小小罗，也31了。时间都去哪儿了？还记得在看16年勇士对骑士的总决赛的时候，解说员介绍到，</p>
-<blockquote>
-<p>其实勇士当年也是一支传奇的球队，估计大部分新球迷都不知道，大概8年前的时候，那时候勇士还是巴郎戴维斯和杰克船长的时代，创造了黑八奇迹，在季后赛第一轮把当时的全联盟第一名小牛队淘汰出局</p>
-</blockquote>
-<p>那一刻，恍若隔世。因为我看过，转眼间，8年了。转眼间，这也成了解说员口中的“当年”。我熟悉的解说员口中的“当年”，是满眼崇拜的听他们讲70年代的大鸟伯德，80年代的魔术师约翰逊，90年代的飞人乔丹，那是我未曾见证过的传说，永远带着强烈的神秘色彩。可当这个“当年”来到21世纪，当“当年”也变成了我的当年，可以清清楚楚回忆起的当年，居然让我这么百感交集。我们当年追的大姚，科比，麦迪，卡特，艾佛森，邓肯，加内特，雷阿伦，奥尼尔，你们都去哪儿了？现在看着整个联盟一张张稚嫩的新面孔，找了好久都找不到一个我认得的球员，只好承认，时间，真的改变了些什么吧。</p>
-<p>有多少次觉得自己就是个小屁孩，20多岁的年纪离自己好远好远。还记得以前看《奋斗》的时候，觉得他们都是25岁的年纪，好大，离我好远。有多少次觉得自己还是个屁颠屁颠的学生，觉得工作了的人都好大。然而当认识了很多很多新的朋友比自己小好多都已工作多年的时候才意识到，自己也来到了所谓的青年时代，也被人们承认为独立的个体而不是受监护人看管的小孩了。自己也该学着规划自己的人生，决定自己的方向，追求自己的所求了，再也不是无忧无虑啥都不想的小孩了。</p>
-<p>想回去孩童时代吗？</p>
-<p>想。</p>
-<p>不想。</p>
-<p>不知道想不想。。。</p>
-<p>只想潜心继续往前走。因为不管想不想，时间都不等人。突然发觉自己并没有老，因为自己从来不曾沉浸在过去。这个世界太过精彩，太多的东西能引起我的兴趣，太多的领域值得我去探索，太多的人值得我去爱。突然发觉时间虽快，貌似自己也着实改变了很多，成长了很多，收获了很多。</p>
-<p>突然觉得，一切，好像都还不错。</p>
-<p>加油，2017！</p>
-<p><div align="right">2017.1.1<div></div></div></p>
-
+        
+          <a class="article-more-a" href="/2017/01/01/时间都去哪儿了/#more">more >></a>
+        
       
 
       
@@ -513,7 +406,7 @@ static不可以修饰局部变量。
     </div>
     <script>
 	var yiliaConfig = {
-		mathjax: false,
+		mathjax: true,
 		isHome: true,
 		isPost: false,
 		isArchive: false,
@@ -522,11 +415,32 @@ static不可以修饰局部变量。
 		open_in_new: false,
 		root: "/",
 		innerArchive: true,
-		showTags: false
+		showTags: true
 	}
 </script>
 
 <script>!function(t){function n(r){if(e[r])return e[r].exports;var o=e[r]={exports:{},id:r,loaded:!1};return t[r].call(o.exports,o,o.exports,n),o.loaded=!0,o.exports}var e={};return n.m=t,n.c=e,n.p="./",n(0)}([function(t,n,e){"use strict";function r(t){return t&&t.__esModule?t:{default:t}}function o(t,n){var e=/\/|index.html/g;return t.replace(e,"")===n.replace(e,"")}function i(){for(var t=document.querySelectorAll(".js-header-menu li a"),n=window.location.pathname,e=0,r=t.length;e<r;e++){var i=t[e];o(n,i.getAttribute("href"))&&(0,d.default)(i,"active")}}function u(t){for(var n=t.offsetLeft,e=t.offsetParent;null!==e;)n+=e.offsetLeft,e=e.offsetParent;return n}function f(t){for(var n=t.offsetTop,e=t.offsetParent;null!==e;)n+=e.offsetTop,e=e.offsetParent;return n}function c(t,n,e,r,o){var i=u(t),c=f(t)-n;if(c-e<=o){var a=t.$newDom;a||(a=t.cloneNode(!0),(0,h.default)(t,a),t.$newDom=a,a.style.position="fixed",a.style.top=(e||c)+"px",a.style.left=i+"px",a.style.zIndex=r||2,a.style.width="100%",a.style.color="#fff"),a.style.visibility="visible",t.style.visibility="hidden"}else{t.style.visibility="visible";var s=t.$newDom;s&&(s.style.visibility="hidden")}}function a(){var t=document.querySelector(".js-overlay"),n=document.querySelector(".js-header-menu");c(t,document.body.scrollTop,-63,2,0),c(n,document.body.scrollTop,1,3,0)}function s(){document.querySelector("#container").addEventListener("scroll",function(t){a()}),window.addEventListener("scroll",function(t){a()}),a()}function l(){x.default.versions.mobile&&window.screen.width<800&&(i(),s())}var p=e(71),d=r(p),v=e(72),y=(r(v),e(84)),h=r(y),b=e(69),x=r(b),g=e(75),m=r(g),w=e(70);l(),(0,w.addLoadEvent)(function(){m.default.init()}),t.exports={}},function(t,n){var e=t.exports="undefined"!=typeof window&&window.Math==Math?window:"undefined"!=typeof self&&self.Math==Math?self:Function("return this")();"number"==typeof __g&&(__g=e)},function(t,n){var e={}.hasOwnProperty;t.exports=function(t,n){return e.call(t,n)}},function(t,n,e){var r=e(49),o=e(15);t.exports=function(t){return r(o(t))}},function(t,n,e){t.exports=!e(8)(function(){return 7!=Object.defineProperty({},"a",{get:function(){return 7}}).a})},function(t,n,e){var r=e(6),o=e(12);t.exports=e(4)?function(t,n,e){return r.f(t,n,o(1,e))}:function(t,n,e){return t[n]=e,t}},function(t,n,e){var r=e(10),o=e(30),i=e(24),u=Object.defineProperty;n.f=e(4)?Object.defineProperty:function(t,n,e){if(r(t),n=i(n,!0),r(e),o)try{return u(t,n,e)}catch(t){}if("get"in e||"set"in e)throw TypeError("Accessors not supported!");return"value"in e&&(t[n]=e.value),t}},function(t,n,e){var r=e(22)("wks"),o=e(13),i=e(1).Symbol,u="function"==typeof i,f=t.exports=function(t){return r[t]||(r[t]=u&&i[t]||(u?i:o)("Symbol."+t))};f.store=r},function(t,n){t.exports=function(t){try{return!!t()}catch(t){return!0}}},function(t,n,e){var r=e(35),o=e(16);t.exports=Object.keys||function(t){return r(t,o)}},function(t,n,e){var r=e(11);t.exports=function(t){if(!r(t))throw TypeError(t+" is not an object!");return t}},function(t,n){t.exports=function(t){return"object"==typeof t?null!==t:"function"==typeof t}},function(t,n){t.exports=function(t,n){return{enumerable:!(1&t),configurable:!(2&t),writable:!(4&t),value:n}}},function(t,n){var e=0,r=Math.random();t.exports=function(t){return"Symbol(".concat(void 0===t?"":t,")_",(++e+r).toString(36))}},function(t,n){var e=t.exports={version:"2.4.0"};"number"==typeof __e&&(__e=e)},function(t,n){t.exports=function(t){if(void 0==t)throw TypeError("Can't call method on  "+t);return t}},function(t,n){t.exports="constructor,hasOwnProperty,isPrototypeOf,propertyIsEnumerable,toLocaleString,toString,valueOf".split(",")},function(t,n){t.exports={}},function(t,n){t.exports=!0},function(t,n){n.f={}.propertyIsEnumerable},function(t,n,e){var r=e(6).f,o=e(2),i=e(7)("toStringTag");t.exports=function(t,n,e){t&&!o(t=e?t:t.prototype,i)&&r(t,i,{configurable:!0,value:n})}},function(t,n,e){var r=e(22)("keys"),o=e(13);t.exports=function(t){return r[t]||(r[t]=o(t))}},function(t,n,e){var r=e(1),o="__core-js_shared__",i=r[o]||(r[o]={});t.exports=function(t){return i[t]||(i[t]={})}},function(t,n){var e=Math.ceil,r=Math.floor;t.exports=function(t){return isNaN(t=+t)?0:(t>0?r:e)(t)}},function(t,n,e){var r=e(11);t.exports=function(t,n){if(!r(t))return t;var e,o;if(n&&"function"==typeof(e=t.toString)&&!r(o=e.call(t)))return o;if("function"==typeof(e=t.valueOf)&&!r(o=e.call(t)))return o;if(!n&&"function"==typeof(e=t.toString)&&!r(o=e.call(t)))return o;throw TypeError("Can't convert object to primitive value")}},function(t,n,e){var r=e(1),o=e(14),i=e(18),u=e(26),f=e(6).f;t.exports=function(t){var n=o.Symbol||(o.Symbol=i?{}:r.Symbol||{});"_"==t.charAt(0)||t in n||f(n,t,{value:u.f(t)})}},function(t,n,e){n.f=e(7)},function(t,n,e){var r=e(1),o=e(14),i=e(46),u=e(5),f="prototype",c=function(t,n,e){var a,s,l,p=t&c.F,d=t&c.G,v=t&c.S,y=t&c.P,h=t&c.B,b=t&c.W,x=d?o:o[n]||(o[n]={}),g=x[f],m=d?r:v?r[n]:(r[n]||{})[f];d&&(e=n);for(a in e)s=!p&&m&&void 0!==m[a],s&&a in x||(l=s?m[a]:e[a],x[a]=d&&"function"!=typeof m[a]?e[a]:h&&s?i(l,r):b&&m[a]==l?function(t){var n=function(n,e,r){if(this instanceof t){switch(arguments.length){case 0:return new t;case 1:return new t(n);case 2:return new t(n,e)}return new t(n,e,r)}return t.apply(this,arguments)};return n[f]=t[f],n}(l):y&&"function"==typeof l?i(Function.call,l):l,y&&((x.virtual||(x.virtual={}))[a]=l,t&c.R&&g&&!g[a]&&u(g,a,l)))};c.F=1,c.G=2,c.S=4,c.P=8,c.B=16,c.W=32,c.U=64,c.R=128,t.exports=c},function(t,n){var e={}.toString;t.exports=function(t){return e.call(t).slice(8,-1)}},function(t,n,e){var r=e(11),o=e(1).document,i=r(o)&&r(o.createElement);t.exports=function(t){return i?o.createElement(t):{}}},function(t,n,e){t.exports=!e(4)&&!e(8)(function(){return 7!=Object.defineProperty(e(29)("div"),"a",{get:function(){return 7}}).a})},function(t,n,e){"use strict";var r=e(18),o=e(27),i=e(36),u=e(5),f=e(2),c=e(17),a=e(51),s=e(20),l=e(58),p=e(7)("iterator"),d=!([].keys&&"next"in[].keys()),v="@@iterator",y="keys",h="values",b=function(){return this};t.exports=function(t,n,e,x,g,m,w){a(e,n,x);var O,S,_,j=function(t){if(!d&&t in A)return A[t];switch(t){case y:return function(){return new e(this,t)};case h:return function(){return new e(this,t)}}return function(){return new e(this,t)}},P=n+" Iterator",E=g==h,M=!1,A=t.prototype,T=A[p]||A[v]||g&&A[g],L=T||j(g),N=g?E?j("entries"):L:void 0,C="Array"==n?A.entries||T:T;if(C&&(_=l(C.call(new t)),_!==Object.prototype&&(s(_,P,!0),r||f(_,p)||u(_,p,b))),E&&T&&T.name!==h&&(M=!0,L=function(){return T.call(this)}),r&&!w||!d&&!M&&A[p]||u(A,p,L),c[n]=L,c[P]=b,g)if(O={values:E?L:j(h),keys:m?L:j(y),entries:N},w)for(S in O)S in A||i(A,S,O[S]);else o(o.P+o.F*(d||M),n,O);return O}},function(t,n,e){var r=e(10),o=e(55),i=e(16),u=e(21)("IE_PROTO"),f=function(){},c="prototype",a=function(){var t,n=e(29)("iframe"),r=i.length,o="<",u=">";for(n.style.display="none",e(48).appendChild(n),n.src="javascript:",t=n.contentWindow.document,t.open(),t.write(o+"script"+u+"document.F=Object"+o+"/script"+u),t.close(),a=t.F;r--;)delete a[c][i[r]];return a()};t.exports=Object.create||function(t,n){var e;return null!==t?(f[c]=r(t),e=new f,f[c]=null,e[u]=t):e=a(),void 0===n?e:o(e,n)}},function(t,n,e){var r=e(35),o=e(16).concat("length","prototype");n.f=Object.getOwnPropertyNames||function(t){return r(t,o)}},function(t,n){n.f=Object.getOwnPropertySymbols},function(t,n,e){var r=e(2),o=e(3),i=e(45)(!1),u=e(21)("IE_PROTO");t.exports=function(t,n){var e,f=o(t),c=0,a=[];for(e in f)e!=u&&r(f,e)&&a.push(e);for(;n.length>c;)r(f,e=n[c++])&&(~i(a,e)||a.push(e));return a}},function(t,n,e){t.exports=e(5)},function(t,n,e){var r=e(15);t.exports=function(t){return Object(r(t))}},function(t,n,e){t.exports={default:e(41),__esModule:!0}},function(t,n,e){t.exports={default:e(42),__esModule:!0}},function(t,n,e){"use strict";function r(t){return t&&t.__esModule?t:{default:t}}n.__esModule=!0;var o=e(39),i=r(o),u=e(38),f=r(u),c="function"==typeof f.default&&"symbol"==typeof i.default?function(t){return typeof t}:function(t){return t&&"function"==typeof f.default&&t.constructor===f.default&&t!==f.default.prototype?"symbol":typeof t};n.default="function"==typeof f.default&&"symbol"===c(i.default)?function(t){return"undefined"==typeof t?"undefined":c(t)}:function(t){return t&&"function"==typeof f.default&&t.constructor===f.default&&t!==f.default.prototype?"symbol":"undefined"==typeof t?"undefined":c(t)}},function(t,n,e){e(65),e(63),e(66),e(67),t.exports=e(14).Symbol},function(t,n,e){e(64),e(68),t.exports=e(26).f("iterator")},function(t,n){t.exports=function(t){if("function"!=typeof t)throw TypeError(t+" is not a function!");return t}},function(t,n){t.exports=function(){}},function(t,n,e){var r=e(3),o=e(61),i=e(60);t.exports=function(t){return function(n,e,u){var f,c=r(n),a=o(c.length),s=i(u,a);if(t&&e!=e){for(;a>s;)if(f=c[s++],f!=f)return!0}else for(;a>s;s++)if((t||s in c)&&c[s]===e)return t||s||0;return!t&&-1}}},function(t,n,e){var r=e(43);t.exports=function(t,n,e){if(r(t),void 0===n)return t;switch(e){case 1:return function(e){return t.call(n,e)};case 2:return function(e,r){return t.call(n,e,r)};case 3:return function(e,r,o){return t.call(n,e,r,o)}}return function(){return t.apply(n,arguments)}}},function(t,n,e){var r=e(9),o=e(34),i=e(19);t.exports=function(t){var n=r(t),e=o.f;if(e)for(var u,f=e(t),c=i.f,a=0;f.length>a;)c.call(t,u=f[a++])&&n.push(u);return n}},function(t,n,e){t.exports=e(1).document&&document.documentElement},function(t,n,e){var r=e(28);t.exports=Object("z").propertyIsEnumerable(0)?Object:function(t){return"String"==r(t)?t.split(""):Object(t)}},function(t,n,e){var r=e(28);t.exports=Array.isArray||function(t){return"Array"==r(t)}},function(t,n,e){"use strict";var r=e(32),o=e(12),i=e(20),u={};e(5)(u,e(7)("iterator"),function(){return this}),t.exports=function(t,n,e){t.prototype=r(u,{next:o(1,e)}),i(t,n+" Iterator")}},function(t,n){t.exports=function(t,n){return{value:n,done:!!t}}},function(t,n,e){var r=e(9),o=e(3);t.exports=function(t,n){for(var e,i=o(t),u=r(i),f=u.length,c=0;f>c;)if(i[e=u[c++]]===n)return e}},function(t,n,e){var r=e(13)("meta"),o=e(11),i=e(2),u=e(6).f,f=0,c=Object.isExtensible||function(){return!0},a=!e(8)(function(){return c(Object.preventExtensions({}))}),s=function(t){u(t,r,{value:{i:"O"+ ++f,w:{}}})},l=function(t,n){if(!o(t))return"symbol"==typeof t?t:("string"==typeof t?"S":"P")+t;if(!i(t,r)){if(!c(t))return"F";if(!n)return"E";s(t)}return t[r].i},p=function(t,n){if(!i(t,r)){if(!c(t))return!0;if(!n)return!1;s(t)}return t[r].w},d=function(t){return a&&v.NEED&&c(t)&&!i(t,r)&&s(t),t},v=t.exports={KEY:r,NEED:!1,fastKey:l,getWeak:p,onFreeze:d}},function(t,n,e){var r=e(6),o=e(10),i=e(9);t.exports=e(4)?Object.defineProperties:function(t,n){o(t);for(var e,u=i(n),f=u.length,c=0;f>c;)r.f(t,e=u[c++],n[e]);return t}},function(t,n,e){var r=e(19),o=e(12),i=e(3),u=e(24),f=e(2),c=e(30),a=Object.getOwnPropertyDescriptor;n.f=e(4)?a:function(t,n){if(t=i(t),n=u(n,!0),c)try{return a(t,n)}catch(t){}if(f(t,n))return o(!r.f.call(t,n),t[n])}},function(t,n,e){var r=e(3),o=e(33).f,i={}.toString,u="object"==typeof window&&window&&Object.getOwnPropertyNames?Object.getOwnPropertyNames(window):[],f=function(t){try{return o(t)}catch(t){return u.slice()}};t.exports.f=function(t){return u&&"[object Window]"==i.call(t)?f(t):o(r(t))}},function(t,n,e){var r=e(2),o=e(37),i=e(21)("IE_PROTO"),u=Object.prototype;t.exports=Object.getPrototypeOf||function(t){return t=o(t),r(t,i)?t[i]:"function"==typeof t.constructor&&t instanceof t.constructor?t.constructor.prototype:t instanceof Object?u:null}},function(t,n,e){var r=e(23),o=e(15);t.exports=function(t){return function(n,e){var i,u,f=String(o(n)),c=r(e),a=f.length;return c<0||c>=a?t?"":void 0:(i=f.charCodeAt(c),i<55296||i>56319||c+1===a||(u=f.charCodeAt(c+1))<56320||u>57343?t?f.charAt(c):i:t?f.slice(c,c+2):(i-55296<<10)+(u-56320)+65536)}}},function(t,n,e){var r=e(23),o=Math.max,i=Math.min;t.exports=function(t,n){return t=r(t),t<0?o(t+n,0):i(t,n)}},function(t,n,e){var r=e(23),o=Math.min;t.exports=function(t){return t>0?o(r(t),9007199254740991):0}},function(t,n,e){"use strict";var r=e(44),o=e(52),i=e(17),u=e(3);t.exports=e(31)(Array,"Array",function(t,n){this._t=u(t),this._i=0,this._k=n},function(){var t=this._t,n=this._k,e=this._i++;return!t||e>=t.length?(this._t=void 0,o(1)):"keys"==n?o(0,e):"values"==n?o(0,t[e]):o(0,[e,t[e]])},"values"),i.Arguments=i.Array,r("keys"),r("values"),r("entries")},function(t,n){},function(t,n,e){"use strict";var r=e(59)(!0);e(31)(String,"String",function(t){this._t=String(t),this._i=0},function(){var t,n=this._t,e=this._i;return e>=n.length?{value:void 0,done:!0}:(t=r(n,e),this._i+=t.length,{value:t,done:!1})})},function(t,n,e){"use strict";var r=e(1),o=e(2),i=e(4),u=e(27),f=e(36),c=e(54).KEY,a=e(8),s=e(22),l=e(20),p=e(13),d=e(7),v=e(26),y=e(25),h=e(53),b=e(47),x=e(50),g=e(10),m=e(3),w=e(24),O=e(12),S=e(32),_=e(57),j=e(56),P=e(6),E=e(9),M=j.f,A=P.f,T=_.f,L=r.Symbol,N=r.JSON,C=N&&N.stringify,k="prototype",F=d("_hidden"),q=d("toPrimitive"),I={}.propertyIsEnumerable,B=s("symbol-registry"),D=s("symbols"),W=s("op-symbols"),H=Object[k],K="function"==typeof L,R=r.QObject,J=!R||!R[k]||!R[k].findChild,U=i&&a(function(){return 7!=S(A({},"a",{get:function(){return A(this,"a",{value:7}).a}})).a})?function(t,n,e){var r=M(H,n);r&&delete H[n],A(t,n,e),r&&t!==H&&A(H,n,r)}:A,G=function(t){var n=D[t]=S(L[k]);return n._k=t,n},$=K&&"symbol"==typeof L.iterator?function(t){return"symbol"==typeof t}:function(t){return t instanceof L},z=function(t,n,e){return t===H&&z(W,n,e),g(t),n=w(n,!0),g(e),o(D,n)?(e.enumerable?(o(t,F)&&t[F][n]&&(t[F][n]=!1),e=S(e,{enumerable:O(0,!1)})):(o(t,F)||A(t,F,O(1,{})),t[F][n]=!0),U(t,n,e)):A(t,n,e)},Y=function(t,n){g(t);for(var e,r=b(n=m(n)),o=0,i=r.length;i>o;)z(t,e=r[o++],n[e]);return t},Q=function(t,n){return void 0===n?S(t):Y(S(t),n)},X=function(t){var n=I.call(this,t=w(t,!0));return!(this===H&&o(D,t)&&!o(W,t))&&(!(n||!o(this,t)||!o(D,t)||o(this,F)&&this[F][t])||n)},V=function(t,n){if(t=m(t),n=w(n,!0),t!==H||!o(D,n)||o(W,n)){var e=M(t,n);return!e||!o(D,n)||o(t,F)&&t[F][n]||(e.enumerable=!0),e}},Z=function(t){for(var n,e=T(m(t)),r=[],i=0;e.length>i;)o(D,n=e[i++])||n==F||n==c||r.push(n);return r},tt=function(t){for(var n,e=t===H,r=T(e?W:m(t)),i=[],u=0;r.length>u;)!o(D,n=r[u++])||e&&!o(H,n)||i.push(D[n]);return i};K||(L=function(){if(this instanceof L)throw TypeError("Symbol is not a constructor!");var t=p(arguments.length>0?arguments[0]:void 0),n=function(e){this===H&&n.call(W,e),o(this,F)&&o(this[F],t)&&(this[F][t]=!1),U(this,t,O(1,e))};return i&&J&&U(H,t,{configurable:!0,set:n}),G(t)},f(L[k],"toString",function(){return this._k}),j.f=V,P.f=z,e(33).f=_.f=Z,e(19).f=X,e(34).f=tt,i&&!e(18)&&f(H,"propertyIsEnumerable",X,!0),v.f=function(t){return G(d(t))}),u(u.G+u.W+u.F*!K,{Symbol:L});for(var nt="hasInstance,isConcatSpreadable,iterator,match,replace,search,species,split,toPrimitive,toStringTag,unscopables".split(","),et=0;nt.length>et;)d(nt[et++]);for(var nt=E(d.store),et=0;nt.length>et;)y(nt[et++]);u(u.S+u.F*!K,"Symbol",{for:function(t){return o(B,t+="")?B[t]:B[t]=L(t)},keyFor:function(t){if($(t))return h(B,t);throw TypeError(t+" is not a symbol!")},useSetter:function(){J=!0},useSimple:function(){J=!1}}),u(u.S+u.F*!K,"Object",{create:Q,defineProperty:z,defineProperties:Y,getOwnPropertyDescriptor:V,getOwnPropertyNames:Z,getOwnPropertySymbols:tt}),N&&u(u.S+u.F*(!K||a(function(){var t=L();return"[null]"!=C([t])||"{}"!=C({a:t})||"{}"!=C(Object(t))})),"JSON",{stringify:function(t){if(void 0!==t&&!$(t)){for(var n,e,r=[t],o=1;arguments.length>o;)r.push(arguments[o++]);return n=r[1],"function"==typeof n&&(e=n),!e&&x(n)||(n=function(t,n){if(e&&(n=e.call(this,t,n)),!$(n))return n}),r[1]=n,C.apply(N,r)}}}),L[k][q]||e(5)(L[k],q,L[k].valueOf),l(L,"Symbol"),l(Math,"Math",!0),l(r.JSON,"JSON",!0)},function(t,n,e){e(25)("asyncIterator")},function(t,n,e){e(25)("observable")},function(t,n,e){e(62);for(var r=e(1),o=e(5),i=e(17),u=e(7)("toStringTag"),f=["NodeList","DOMTokenList","MediaList","StyleSheetList","CSSRuleList"],c=0;c<5;c++){var a=f[c],s=r[a],l=s&&s.prototype;l&&!l[u]&&o(l,u,a),i[a]=i.Array}},function(t,n){"use strict";var e={versions:function(){var t=window.navigator.userAgent;return{trident:t.indexOf("Trident")>-1,presto:t.indexOf("Presto")>-1,webKit:t.indexOf("AppleWebKit")>-1,gecko:t.indexOf("Gecko")>-1&&t.indexOf("KHTML")==-1,mobile:!!t.match(/AppleWebKit.*Mobile.*/),ios:!!t.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/),android:t.indexOf("Android")>-1||t.indexOf("Linux")>-1,iPhone:t.indexOf("iPhone")>-1||t.indexOf("Mac")>-1,iPad:t.indexOf("iPad")>-1,webApp:t.indexOf("Safari")==-1,weixin:t.indexOf("MicroMessenger")==-1}}()};t.exports=e},function(t,n,e){"use strict";function r(t){return t&&t.__esModule?t:{default:t}}var o=e(40),i=r(o),u=function(){function t(t,n,e){return n||e?String.fromCharCode(n||e):o[t]||t}function n(t){return l[t]}var e=/&quot;|&lt;|&gt;|&amp;|&nbsp;|&apos;|&#(\d+);|&#(\d+)/g,r=/['<> "&]/g,o={"&quot;":'"',"&lt;":"<","&gt;":">","&amp;":"&","&nbsp;":" "},f=/\u00a0/g,c=/<br\s*\/?>/gi,a=/\r?\n/g,s=/\s/g,l={};for(var p in o)l[o[p]]=p;return o["&apos;"]="'",l["'"]="&#39;",{encode:function(t){return t?(""+t).replace(r,n).replace(a,"<br/>").replace(s,"&nbsp;"):""},decode:function(n){return n?(""+n).replace(c,"\n").replace(e,t).replace(f," "):""},encodeBase16:function(t){if(!t)return t;t+="";for(var n=[],e=0,r=t.length;r>e;e++)n.push(t.charCodeAt(e).toString(16).toUpperCase());return n.join("")},encodeBase16forJSON:function(t){if(!t)return t;t=t.replace(/[\u4E00-\u9FBF]/gi,function(t){return escape(t).replace("%u","\\u")});for(var n=[],e=0,r=t.length;r>e;e++)n.push(t.charCodeAt(e).toString(16).toUpperCase());return n.join("")},decodeBase16:function(t){if(!t)return t;t+="";for(var n=[],e=0,r=t.length;r>e;e+=2)n.push(String.fromCharCode("0x"+t.slice(e,e+2)));return n.join("")},encodeObject:function(t){if(t instanceof Array)for(var n=0,e=t.length;e>n;n++)t[n]=u.encodeObject(t[n]);else if("object"==("undefined"==typeof t?"undefined":(0,i.default)(t)))for(var r in t)t[r]=u.encodeObject(t[r]);else if("string"==typeof t)return u.encode(t);return t},loadScript:function(t){var n=document.createElement("script");document.getElementsByTagName("body")[0].appendChild(n),n.setAttribute("src",t)},addLoadEvent:function(t){var n=window.onload;"function"!=typeof window.onload?window.onload=t:window.onload=function(){n(),t()}}}}();t.exports=u},function(t,n){function e(t,n){t.classList?t.classList.add(n):t.className+=" "+n}t.exports=e},function(t,n){function e(t,n){if(t.classList)t.classList.remove(n);else{var e=new RegExp("(^|\\b)"+n.split(" ").join("|")+"(\\b|$)","gi");t.className=t.className.replace(e," ")}}t.exports=e},,,function(t,n){"use strict";function e(){var t=document.querySelector("#page-nav");if(t&&!document.querySelector("#page-nav .extend.prev")&&(t.innerHTML='<a class="extend prev disabled" rel="prev">&laquo; Prev</a>'+t.innerHTML),t&&!document.querySelector("#page-nav .extend.next")&&(t.innerHTML=t.innerHTML+'<a class="extend next disabled" rel="next">Next &raquo;</a>'),yiliaConfig&&yiliaConfig.open_in_new){var n=document.querySelectorAll(".article-entry a:not(.article-more-a)");n.forEach(function(t){var n=t.setAttribute("target");n&&""!==n||t.setAttribute("target","_blank")})}var e=document.querySelector("#js-aboutme");e&&0!==e.length&&(e.innerHTML=e.innerText)}t.exports={init:e}},,,,,,,,,function(t,n){function e(t,n){if("string"==typeof n)return t.insertAdjacentHTML("afterend",n);var e=t.nextSibling;return e?t.parentNode.insertBefore(n,e):t.parentNode.appendChild(n)}t.exports=e}])</script><script src="/./main.05aabf.js"></script><script>!function(){var e=function(e){var t=document.createElement("script");document.getElementsByTagName("body")[0].appendChild(t),t.setAttribute("src",e)};e("/slider.885efe.js")}()</script>
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
 
 
     
@@ -585,11 +499,11 @@ static不可以修饰局部变量。
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+                <a href="javascript:void(0)" class="js-tag color5">Algorithm</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Algorithm</a>
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -598,6 +512,10 @@ static不可以修饰局部变量。
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">面试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">MachineLearning</a>
               </li>
             
             <div class="clearfix"></div>
