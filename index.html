@@ -201,72 +201,9 @@
 <li><code>mv [option] source destination</code></li>
 <li>可以用来将文件改名或者移动到别处</li>
 </ul>
-<h4 id="创建文件夹和删除空文件夹：mkdir-rmdir"><a href="#创建文件夹和删除空文件夹：mkdir-rmdir" class="headerlink" title="创建文件夹和删除空文件夹：mkdir , rmdir"></a>创建文件夹和删除空文件夹：mkdir , rmdir</h4><ul>
-<li><code>mkdir [option] dir-name</code></li>
-<li><code>rmdir [option] dir-name</code> 必须是空文件夹</li>
-</ul>
-<h4 id="改变工作目录：cd"><a href="#改变工作目录：cd" class="headerlink" title="改变工作目录：cd"></a>改变工作目录：cd</h4><h4 id="列出目录：ls"><a href="#列出目录：ls" class="headerlink" title="列出目录：ls"></a>列出目录：ls</h4><h4 id="改变权限-su"><a href="#改变权限-su" class="headerlink" title="改变权限: su"></a>改变权限: su</h4><ul>
-<li><code>su [option] 使用者账号</code></li>
-</ul>
-<h4 id="显示进程命令：PS"><a href="#显示进程命令：PS" class="headerlink" title="显示进程命令：PS"></a>显示进程命令：PS</h4><ul>
-<li><code>ps [option]</code></li>
-</ul>
-<h4 id="kill-进程：-kill"><a href="#kill-进程：-kill" class="headerlink" title="kill 进程： kill"></a>kill 进程： kill</h4><ul>
-<li><code>kill [option] PID</code></li>
-</ul>
-<h4 id="搜索命令：grep"><a href="#搜索命令：grep" class="headerlink" title="搜索命令：grep"></a>搜索命令：grep</h4><ul>
-<li><code>grep 字符串</code></li>
-</ul>
-<p>例：查看所有CMD里是java的进程：</p>
-<ul>
-<li>使用BSD格式显示所有进程 <code>ps -aux | grep java</code></li>
-<li>使用标准格式显示所有进程 <code>ps -ef | grep java</code></li>
-</ul>
-<h4 id="显示命令：echo"><a href="#显示命令：echo" class="headerlink" title="显示命令：echo"></a>显示命令：echo</h4><ul>
-<li><code>echo 字符串</code> 在显示器上显示一段文字</li>
-</ul>
-<h4 id="清楚屏幕信息：clear"><a href="#清楚屏幕信息：clear" class="headerlink" title="清楚屏幕信息：clear"></a>清楚屏幕信息：clear</h4><h3 id="shell基本知识"><a href="#shell基本知识" class="headerlink" title="shell基本知识"></a>shell基本知识</h3><h4 id="系统变量："><a href="#系统变量：" class="headerlink" title="系统变量："></a>系统变量：</h4><ul>
-<li>$0: 该程序名字</li>
-<li>$n: 该程序的第n个参数值</li>
-<li>$*: 该程序所有参数</li>
-<li>$#: 该程序参数的个数</li>
-<li>$$: 该程序PID</li>
-</ul>
-<h4 id="从键盘输入变量值："><a href="#从键盘输入变量值：" class="headerlink" title="从键盘输入变量值："></a>从键盘输入变量值：</h4><ul>
-<li>read命令： <code>read var1, var2, ..., varn</code></li>
-</ul>
-<h4 id="比较："><a href="#比较：" class="headerlink" title="比较："></a>比较：</h4><ul>
-<li><code>-eq</code>：相等 equal</li>
-<li><code>-ne</code>：不等 not equal</li>
-<li><code>-gt</code>: 大于 greater than</li>
-<li><code>-ge</code>: 大于等于 greater equal</li>
-<li><code>-lt</code>: 小于 less than</li>
-<li><code>-le</code>: 小于等于 less equal</li>
-</ul>
-<h4 id="双引号及单引号："><a href="#双引号及单引号：" class="headerlink" title="双引号及单引号："></a>双引号及单引号：</h4><p><code>$echo &quot;$HOME $PATH&quot;</code>  – 显示变量值</p>
-<p><code>/home/hbwork opt/kde/bin:/usr/local/bin:</code></p>
-<p> <code>$echo &#39;$HOME $PATH&#39;</code>  – 显示单引号里的内容</p>
-<p><code>$HOME $PATH</code></p>
-<h3 id="if-else语句："><a href="#if-else语句：" class="headerlink" title="if-else语句："></a>if-else语句：</h3><h4 id="1-if…else"><a href="#1-if…else" class="headerlink" title="1. if…else"></a>1. if…else</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">if [ expression ]</div><div class="line">then</div><div class="line">	statement to be executed if expression is true</div><div class="line">fi</div></pre></td></tr></table></figure>
-<p>注意:expression和方括号之间必须有空格，分号是不同语句之间的分割符，如果一行只有一个语句，则不需加分号，见下例区别：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">!/bin/zsh</div><div class="line"></div><div class="line">echo &quot;please print a&quot;</div><div class="line">read a</div><div class="line">echo &quot;please print b&quot;</div><div class="line">read b</div><div class="line"></div><div class="line">if [ $a -eq $b ];then</div><div class="line">    echo &quot;a is equal to b&quot;</div><div class="line">fi</div><div class="line"></div><div class="line">if [ $a -ne $b ]</div><div class="line">then</div><div class="line">    echo &quot;a is not equal to b&quot;</div><div class="line">fi</div></pre></td></tr></table></figure>
-<h4 id="2-if…else…fi"><a href="#2-if…else…fi" class="headerlink" title="2. if…else…fi"></a>2. if…else…fi</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">if [ expression ]</div><div class="line">then</div><div class="line">   Statement(s) to be executed if expression is true</div><div class="line">else</div><div class="line">   Statement(s) to be executed if expression is not true</div><div class="line">fi</div></pre></td></tr></table></figure>
-<h4 id="3-if…elif…if"><a href="#3-if…elif…if" class="headerlink" title="3. if…elif…if"></a>3. if…elif…if</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">if [ expression 1 ]</div><div class="line">then</div><div class="line">   Statement(s) to be executed if expression 1 is true</div><div class="line">elif [ expression 2 ]</div><div class="line">then</div><div class="line">   Statement(s) to be executed if expression 2 is true</div><div class="line">elif [ expression 3 ]</div><div class="line">then</div><div class="line">   Statement(s) to be executed if expression 3 is true</div><div class="line">else</div><div class="line">   Statement(s) to be executed if no expression is true</div><div class="line">fi</div></pre></td></tr></table></figure>
-<h4 id="4-另外："><a href="#4-另外：" class="headerlink" title="4. 另外："></a>4. 另外：</h4><p><code>test</code>命令用于检查某个条件是否成立，与方括号类似</p>
-<p>因此if…else语句可以写成一行以命令行的方式运行：<br><code>if test $[2*3] -eq $[1+5]; then echo &#39;The two numbers are equal!&#39;; fi;</code></p>
-<p>或者：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">num1=$[2*3]</div><div class="line">num2=$[1+5]</div><div class="line">if test $[num1] -eq $[num2]</div><div class="line">then</div><div class="line">    echo &apos;The two numbers are equal!&apos;</div><div class="line">else</div><div class="line">    echo &apos;The two numbers are not equal!&apos;</div><div class="line">fi</div></pre></td></tr></table></figure>
-<h3 id="for-loop"><a href="#for-loop" class="headerlink" title="for loop"></a>for loop</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">for 变量 in 列表</div><div class="line">do</div><div class="line">    command1</div><div class="line">    command2</div><div class="line">    ...</div><div class="line">    commandN</div><div class="line">done</div></pre></td></tr></table></figure>
-<p>列表是你想遍历的一组值组成的序列，每个值通过<strong>空格</strong>分隔。</p>
-<p>in列表是可选的，如果不用它，for循环使用命令行的位置参数。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">for loop in 1 2 3 4 5</div><div class="line">do</div><div class="line">    echo &quot;The value is: $loop&quot;</div><div class="line">done</div></pre></td></tr></table></figure>
-<h3 id="while-loop"><a href="#while-loop" class="headerlink" title="while loop"></a>while loop</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">while command</div><div class="line">do</div><div class="line">   Statement(s) to be executed if command is true</div><div class="line">done</div></pre></td></tr></table></figure>
-<p>命令执行完毕，控制返回循环顶部，从头开始直至测试条件为假</p>
-<p>例：leetcode 195 tenth line: 输出文件的第10行</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">cnt=0</div><div class="line">while read line &amp;&amp; [ $cnt -le 10 ]; do</div><div class="line">  let &apos;cnt = cnt + 1&apos;</div><div class="line">  if [ $cnt -eq 10 ]; then</div><div class="line">    echo $line</div><div class="line">    exit 0</div><div class="line">  fi</div><div class="line">done &lt; file.txt</div></pre></td></tr></table></figure>
-<p>let 为做运算</p>
-<p>最后<code>&lt;</code>为重定向，将file.txt传给while</p>
-
+        
+          <a class="article-more-a" href="/2017/07/02/Linux-shell-cmd/#more">more >></a>
+        
       
 
       
@@ -1060,15 +997,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">shell</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">MachineLearning</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">shell</a>
               </li>
              
               <li class="article-tag-list-item">
