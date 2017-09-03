@@ -173,6 +173,90 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-java中的Map" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/09/03/java中的Map/">java中的Map</a>
+    </h1>
+  
+
+        
+        <a href="/2017/09/03/java中的Map/" class="archive-article-date">
+  	<time datetime="2017-09-03T07:31:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>java为数据结构中的映射定义了一个接口java.util.Map;它有四个实现类,分别是HashMap Hashtable LinkedHashMap 和TreeMap.</strong></p>
+<p>Map主要用于存储键值对，根据键得值，不允许键重复，但允许值重复。</p>
+<hr>
+<h4 id="HashMap"><a href="#HashMap" class="headerlink" title="HashMap"></a>HashMap</h4><p>HashMap是最常用的Map，根据键的HashCode存储值，允许但只允许1个键为null，允许多个值为null。</p>
+<ul>
+<li>遍历时，访问顺序随机。</li>
+<li>不支持线程的同步，并不是线程安全的，如果同一时刻多个线程同时写HashMap，有课能导致数据不一致。</li>
+<li>如果需要同步，使用Collections的synchronizedMap方法使HashMap具有同步的能力。</li>
+</ul>
+        
+          <a class="article-more-a" href="/2017/09/03/java中的Map/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Algorithm</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/09/03/java中的Map/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-TopK问题的处理方式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -907,97 +991,9 @@
 
 
   
-    <article id="post-K-NN" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/04/12/K-NN/">K-NN</a>
-    </h1>
-  
-
-        
-        <a href="/2017/04/12/K-NN/" class="archive-article-date">
-  	<time datetime="2017-04-12T02:58:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-12</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ul>
-<li>实质：对特征空间的划分</li>
-<li>输入：实例的特征向量</li>
-<li>输出：实例的类别标签（可以多类）或者回归问题为数字</li>
-<li>性质：监督学习方法，可分类可回归</li>
-<li>特点：没有显式的训练过程，属于懒惰学习(lazy learning)，在训练阶段只是把样本保存起来，训练时间开销为0，待收到样本时再进行处理</li>
-</ul>
-<p>三个要素：</p>
-<ul>
-<li>K的值（K=1时成为最近邻法）</li>
-<li>距离度量（欧式距离）</li>
-<li>决策规则（分类任务：多数表决，回归任务：平均值）</li>
-</ul>
-        
-          <a class="article-more-a" href="/2017/04/12/K-NN/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">MachineLearning</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/04/12/K-NN/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
   
 

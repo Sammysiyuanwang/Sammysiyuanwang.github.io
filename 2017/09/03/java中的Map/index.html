@@ -6,14 +6,33 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2017/9 | Prestige</title>
+  <title>java中的Map | Prestige</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Prestige">
-<meta property="og:url" content="http://yoursite.com/archives/2017/09/index.html">
+  <meta name="description" content="java为数据结构中的映射定义了一个接口java.util.Map;它有四个实现类,分别是HashMap Hashtable LinkedHashMap 和TreeMap.
+Map主要用于存储键值对，根据键得值，不允许键重复，但允许值重复。
+
+HashMapHashMap是最常用的Map，根据键的HashCode存储值，允许但只允许1个键为null，允许多个值为null。
+
+遍历时，访问顺序随机。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java中的Map">
+<meta property="og:url" content="http://yoursite.com/2017/09/03/java中的Map/index.html">
 <meta property="og:site_name" content="Prestige">
+<meta property="og:description" content="java为数据结构中的映射定义了一个接口java.util.Map;它有四个实现类,分别是HashMap Hashtable LinkedHashMap 和TreeMap.
+Map主要用于存储键值对，根据键得值，不允许键重复，但允许值重复。
+
+HashMapHashMap是最常用的Map，根据键的HashCode存储值，允许但只允许1个键为null，允许多个值为null。
+
+遍历时，访问顺序随机。">
+<meta property="og:updated_time" content="2017-09-03T07:32:09.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Prestige">
+<meta name="twitter:title" content="java中的Map">
+<meta name="twitter:description" content="java为数据结构中的映射定义了一个接口java.util.Map;它有四个实现类,分别是HashMap Hashtable LinkedHashMap 和TreeMap.
+Map主要用于存储键值对，根据键得值，不允许键重复，但允许值重复。
+
+HashMapHashMap是最常用的Map，根据键的HashCode存储值，允许但只允许1个键为null，允许多个值为null。
+
+遍历时，访问顺序随机。">
   
     <link rel="alternative" href="/atom.xml" title="Prestige" type="application/atom+xml">
   
@@ -171,36 +190,74 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-java中的Map" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      java中的Map
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/09/03/java中的Map/" class="archive-article-date">
+
+        
+        <a href="/2017/09/03/java中的Map/" class="archive-article-date">
   	<time datetime="2017-09-03T07:31:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-03</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/03/java中的Map/">java中的Map</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>java为数据结构中的映射定义了一个接口java.util.Map;它有四个实现类,分别是HashMap Hashtable LinkedHashMap 和TreeMap.</strong></p>
+<p>Map主要用于存储键值对，根据键得值，不允许键重复，但允许值重复。</p>
+<hr>
+<h4 id="HashMap"><a href="#HashMap" class="headerlink" title="HashMap"></a>HashMap</h4><p>HashMap是最常用的Map，根据键的HashCode存储值，允许但只允许1个键为null，允许多个值为null。</p>
+<ul>
+<li>遍历时，访问顺序随机。</li>
+<li>不支持线程的同步，并不是线程安全的，如果同一时刻多个线程同时写HashMap，有课能导致数据不一致。</li>
+<li>如果需要同步，使用Collections的synchronizedMap方法使HashMap具有同步的能力。</li>
+</ul>
+<a id="more"></a>
+<h4 id="Hashtable"><a href="#Hashtable" class="headerlink" title="Hashtable"></a>Hashtable</h4><p>与HashMap不同的地方是：</p>
+<ul>
+<li>不允许键或者值为空</li>
+<li>线程安全，同一时刻只能有一个线程在写，因此有可能速度较慢</li>
+</ul>
+<h4 id="LinkedHashMap"><a href="#LinkedHashMap" class="headerlink" title="LinkedHashMap"></a>LinkedHashMap</h4><p>保存了键插入的顺序，当使用<code>iterator</code>遍历时，按插入顺序遍历。</p>
+<p>那道“第一个只出现一次的字符”可以用这个数据结构来做。</p>
+<h4 id="TreeMap"><a href="#TreeMap" class="headerlink" title="TreeMap"></a>TreeMap</h4><p>TreeMap实现了一个<code>SortMap</code>接口，可以把记录按照键进行排序，默认升序。当使用iterator遍历时，按排好序的顺序进行遍历。</p>
+<hr>
+<h3 id="Map的4种遍历方法"><a href="#Map的4种遍历方法" class="headerlink" title="Map的4种遍历方法"></a>Map的4种遍历方法</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> java.util.HashMap;</div><div class="line"><span class="keyword">import</span> java.util.Iterator;</div><div class="line"><span class="keyword">import</span> java.util.Map;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestMap</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">        Map&lt;Integer, String&gt; map = <span class="keyword">new</span> HashMap&lt;Integer, String&gt;();</div><div class="line">        map.put(<span class="number">1</span>, <span class="string">"a"</span>);</div><div class="line">        map.put(<span class="number">2</span>, <span class="string">"b"</span>);</div><div class="line">        map.put(<span class="number">3</span>, <span class="string">"ab"</span>);</div><div class="line">        map.put(<span class="number">4</span>, <span class="string">"ab"</span>);</div><div class="line">        map.put(<span class="number">4</span>, <span class="string">"ab"</span>);<span class="comment">// 和上面相同 ， 会自己筛选</span></div><div class="line">        System.out.println(map.size());</div><div class="line">        <span class="comment">// 第一种：</span></div><div class="line">        <span class="comment">/*</span></div><div class="line">         * Set&lt;Integer&gt; set = map.keySet(); //得到所有key的集合</div><div class="line">         * </div><div class="line">         * for (Integer in : set) &#123; String str = map.get(in);</div><div class="line">         * System.out.println(in + "     " + str); &#125;</div><div class="line">         */</div><div class="line">        System.out.println(<span class="string">"第一种：通过Map.keySet遍历key和value："</span>);</div><div class="line">        <span class="keyword">for</span> (Integer in : map.keySet()) &#123;</div><div class="line">            <span class="comment">//map.keySet()返回的是所有key的值</span></div><div class="line">            String str = map.get(in);<span class="comment">//得到每个key多对用value的值</span></div><div class="line">            System.out.println(in + <span class="string">"     "</span> + str);</div><div class="line">        &#125;</div><div class="line">        <span class="comment">// 第二种：</span></div><div class="line">        System.out.println(<span class="string">"第二种：通过Map.entrySet使用iterator遍历key和value："</span>);</div><div class="line">        Iterator&lt;Map.Entry&lt;Integer, String&gt;&gt; it = map.entrySet().iterator();</div><div class="line">        <span class="keyword">while</span> (it.hasNext()) &#123;</div><div class="line">             Map.Entry&lt;Integer, String&gt; entry = it.next();</div><div class="line">               System.out.println(<span class="string">"key= "</span> + entry.getKey() + <span class="string">" and value= "</span> + entry.getValue());</div><div class="line">        &#125;</div><div class="line">        <span class="comment">// 第三种：推荐，尤其是容量大时</span></div><div class="line">        System.out.println(<span class="string">"第三种：通过Map.entrySet遍历key和value"</span>);</div><div class="line">        <span class="keyword">for</span> (Map.Entry&lt;Integer, String&gt; entry : map.entrySet()) &#123;</div><div class="line">            <span class="comment">//Map.entry&lt;Integer,String&gt; 映射项（键-值对）  有几个方法：用上面的名字entry</span></div><div class="line">            <span class="comment">//entry.getKey() ;entry.getValue(); entry.setValue();</span></div><div class="line">            <span class="comment">//map.entrySet()  返回此映射中包含的映射关系的 Set视图。</span></div><div class="line">            System.out.println(<span class="string">"key= "</span> + entry.getKey() + <span class="string">" and value= "</span></div><div class="line">                    + entry.getValue());</div><div class="line">        &#125;</div><div class="line">        <span class="comment">// 第四种：</span></div><div class="line">        System.out.println(<span class="string">"第四种：通过Map.values()遍历所有的value，但不能遍历key"</span>);</div><div class="line">        <span class="keyword">for</span> (String v : map.values()) &#123;</div><div class="line">            System.out.println(<span class="string">"value= "</span> + v);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+      
 
-        <div class="article-info info-on-right">
-          
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -212,57 +269,104 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/09/03/java中的Map/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/09/03/TopK问题的处理方式/" class="archive-article-date">
-  	<time datetime="2017-09-03T05:53:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-03</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2017/09/03/TopK问题的处理方式/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">TopK问题的处理方式</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/03/TopK问题的处理方式/">TopK问题的处理方式</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Algorithm</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
 
 
           </div>
@@ -285,8 +389,8 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
