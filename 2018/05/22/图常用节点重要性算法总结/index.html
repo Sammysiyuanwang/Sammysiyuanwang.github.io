@@ -6,14 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Prestige</title>
+  <title>图常用节点重要性算法总结 | Prestige</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Prestige">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="最近在做图相关方面的东西，看了一些文献和综述。便总结了常用的评判图中节点重要性的算法原理及在Spark-GraphX上的实现思路。
+Degree CentralityDegree Centrality是最简单的衡量节点重要性的算法之一。主要的依据为节点的度，即节点的度越大，影响性越大。为了在不同的图中进行比较，一般会使用归一化的度中心性，除以图节点的数目。
+DC(i)=\frac{k_i}{n-1">
+<meta property="og:type" content="article">
+<meta property="og:title" content="图常用节点重要性算法总结">
+<meta property="og:url" content="http://yoursite.com/2018/05/22/图常用节点重要性算法总结/index.html">
 <meta property="og:site_name" content="Prestige">
+<meta property="og:description" content="最近在做图相关方面的东西，看了一些文献和综述。便总结了常用的评判图中节点重要性的算法原理及在Spark-GraphX上的实现思路。
+Degree CentralityDegree Centrality是最简单的衡量节点重要性的算法之一。主要的依据为节点的度，即节点的度越大，影响性越大。为了在不同的图中进行比较，一般会使用归一化的度中心性，除以图节点的数目。
+DC(i)=\frac{k_i}{n-1">
+<meta property="og:updated_time" content="2018-05-22T15:01:29.534Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Prestige">
+<meta name="twitter:title" content="图常用节点重要性算法总结">
+<meta name="twitter:description" content="最近在做图相关方面的东西，看了一些文献和综述。便总结了常用的评判图中节点重要性的算法原理及在Spark-GraphX上的实现思路。
+Degree CentralityDegree Centrality是最简单的衡量节点重要性的算法之一。主要的依据为节点的度，即节点的度越大，影响性越大。为了在不同的图中进行比较，一般会使用归一化的度中心性，除以图节点的数目。
+DC(i)=\frac{k_i}{n-1">
   
     <link rel="alternative" href="/atom.xml" title="Prestige" type="application/atom+xml">
   
@@ -171,16 +181,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-图常用节点重要性算法总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-图常用节点重要性算法总结" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/22/图常用节点重要性算法总结/">图常用节点重要性算法总结</a>
+    <h1 class="article-title" itemprop="name">
+      图常用节点重要性算法总结
     </h1>
   
 
@@ -229,6 +237,27 @@
       
 
       
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
     </div>
     <div class="article-info article-info-index">
       
@@ -247,16 +276,75 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/05/22/图常用节点重要性算法总结/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2018/05/22/图常用节点重要性算法总结/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2017/09/21/Spark数据倾斜/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Spark数据倾斜</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -276,750 +364,12 @@
 
 
 
-
-  
-    <article id="post-Spark数据倾斜" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/09/21/Spark数据倾斜/">Spark数据倾斜</a>
-    </h1>
-  
-
-        
-        <a href="/2017/09/21/Spark数据倾斜/" class="archive-article-date">
-  	<time datetime="2017-09-21T08:58:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-21</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="什么是数据倾斜"><a href="#什么是数据倾斜" class="headerlink" title="什么是数据倾斜"></a>什么是数据倾斜</h3><ol>
-<li>绝大多数的task执行速度非常快，但个别的task执行速度非常慢。如有1000个task，997个task在1分钟内执行完毕，剩余3个需要两三个小时</li>
-<li>原本能够正常执行的Spark作业，突然爆出OOM异常执行失败。</li>
-</ol>
-<h3 id="数据倾斜的原因"><a href="#数据倾斜的原因" class="headerlink" title="数据倾斜的原因"></a>数据倾斜的原因</h3><p>在进行shuffle的时候，必须将各个节点上相同的key拉取到某个节点上的一个task来进行处理，比如按照key进行聚合或join等操作。此时如果某个key对应的数据量特别大的话，就会发生数据倾斜。比如大部分key对应10条数据，但是个别key却对应了100万条数据，那么大部分task可能就只会分配到10条数据，然后1秒钟就运行完了；但是个别task可能分配到了100万数据，要运行一两个小时。因此，整个Spark作业的运行进度是由运行时间最长的那个task决定的。</p>
-<p>因此数据倾斜也只会发生在shuffle的过程中。</p>
-<p>可能会发生数据倾斜的算子：</p>
-<p><code>distinct</code>,<code>groupByKey</code>,<code>reduceByKey</code>,<code>aggregateByKey</code>,<code>join</code>,<code>cogroup</code>,<code>repartition</code></p>
-        
-          <a class="article-more-a" href="/2017/09/21/Spark数据倾斜/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Spark</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/09/21/Spark数据倾斜/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-java中的Map" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/09/03/java中的Map/">java中的Map</a>
-    </h1>
-  
-
-        
-        <a href="/2017/09/03/java中的Map/" class="archive-article-date">
-  	<time datetime="2017-09-03T07:31:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-03</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>java为数据结构中的映射定义了一个接口java.util.Map;它有四个实现类,分别是HashMap Hashtable LinkedHashMap 和TreeMap.</strong></p>
-<p>Map主要用于存储键值对，根据键得值，不允许键重复，但允许值重复。</p>
-<hr>
-<h4 id="HashMap"><a href="#HashMap" class="headerlink" title="HashMap"></a>HashMap</h4><p>HashMap是最常用的Map，根据键的HashCode存储值，允许但只允许1个键为null，允许多个值为null。</p>
-<ul>
-<li>遍历时，访问顺序随机。</li>
-<li>不支持线程的同步，并不是线程安全的，如果同一时刻多个线程同时写HashMap，有课能导致数据不一致。</li>
-<li>如果需要同步，使用Collections的synchronizedMap方法使HashMap具有同步的能力。</li>
-</ul>
-        
-          <a class="article-more-a" href="/2017/09/03/java中的Map/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Algorithm</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/09/03/java中的Map/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-TopK问题的处理方式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/09/03/TopK问题的处理方式/">TopK问题的处理方式</a>
-    </h1>
-  
-
-        
-        <a href="/2017/09/03/TopK问题的处理方式/" class="archive-article-date">
-  	<time datetime="2017-09-03T05:53:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-03</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>题目为找出一些数中最大或最小的K个数或者第K个数：</p>
-<ul>
-<li>Partition</li>
-<li>Heap(PriorityQueue)</li>
-<li>MapReduce</li>
-<li>Spark</li>
-</ul>
-<hr>
-        
-          <a class="article-more-a" href="/2017/09/03/TopK问题的处理方式/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Algorithm</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/09/03/TopK问题的处理方式/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-实现各种基本运算器" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/14/实现各种基本运算器/">实现各种基本运算器</a>
-    </h1>
-  
-
-        
-        <a href="/2017/07/14/实现各种基本运算器/" class="archive-article-date">
-  	<time datetime="2017-07-13T17:10:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>目录：</p>
-<ul>
-<li>整数除法</li>
-<li>平方根</li>
-<li>乘方</li>
-<li>大数加法（Add Two Strings）</li>
-<li>大数乘法（Multiply Strings）</li>
-<li>大数减法（Substract Two Strings）</li>
-</ul>
-<p>边界处理问题上，要记得<code>MIN_INT</code>的abs要比<code>MAX_INT</code>大1的，因此往往需要单独处理</p>
-        
-          <a class="article-more-a" href="/2017/07/14/实现各种基本运算器/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Algorithm</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/07/14/实现各种基本运算器/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Linux-shell-cmd" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/02/Linux-shell-cmd/">Linux shell cmd</a>
-    </h1>
-  
-
-        
-        <a href="/2017/07/02/Linux-shell-cmd/" class="archive-article-date">
-  	<time datetime="2017-07-02T09:01:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-02</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>总结一下linux shell中常用的命令：</p>
-<h3 id="shell-基本命令"><a href="#shell-基本命令" class="headerlink" title="shell 基本命令"></a>shell 基本命令</h3><h4 id="拷贝命令：cp"><a href="#拷贝命令：cp" class="headerlink" title="拷贝命令：cp"></a>拷贝命令：cp</h4><ul>
-<li><code>cp [option] source destination</code></li>
-</ul>
-<h4 id="移动命令：mv"><a href="#移动命令：mv" class="headerlink" title="移动命令：mv"></a>移动命令：mv</h4><ul>
-<li><code>mv [option] source destination</code></li>
-<li>可以用来将文件改名或者移动到别处</li>
-</ul>
-        
-          <a class="article-more-a" href="/2017/07/02/Linux-shell-cmd/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">shell</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/07/02/Linux-shell-cmd/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Arrays-Two-pointers" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/04/20/Arrays-Two-pointers/">Arrays &amp; Two pointers</a>
-    </h1>
-  
-
-        
-        <a href="/2017/04/20/Arrays-Two-pointers/" class="archive-article-date">
-  	<time datetime="2017-04-20T14:18:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-20</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="1-Two-Sum"><a href="#1-Two-Sum" class="headerlink" title="1. Two Sum"></a>1. Two Sum</h3><blockquote>
-<p>Given an array of integers, return indices of the two numbers such that they add up to a specific target.</p>
-</blockquote>
-<p>思路：用哈希表存储，<code>key</code>是值，<code>value</code>是索引，每次查找<code>value-nums[i]</code>是否在哈希表里，有的话取出索引跟i搭配即可。</p>
-        
-          <a class="article-more-a" href="/2017/04/20/Arrays-Two-pointers/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Algorithm</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/04/20/Arrays-Two-pointers/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Dynamic-Programming" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/04/20/Dynamic-Programming/">Dynamic Programming</a>
-    </h1>
-  
-
-        
-        <a href="/2017/04/20/Dynamic-Programming/" class="archive-article-date">
-  	<time datetime="2017-04-20T14:17:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-20</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="70-Climbing-Stairs"><a href="#70-Climbing-Stairs" class="headerlink" title="70. Climbing Stairs"></a>70. Climbing Stairs</h3><blockquote>
-<p>爬楼梯问题，一次能爬一级或者两级，问n阶台阶有几种走法</p>
-</blockquote>
-<p>思路，关键点在于，n阶台阶的走法，是（n-1)级台阶的走法加上(n-2)级台阶的走法。因此可以使用递归。但是递归通常会溢出，那么使用动态规划思想，记录下每级台阶的走法。</p>
-        
-          <a class="article-more-a" href="/2017/04/20/Dynamic-Programming/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Algorithm</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/04/20/Dynamic-Programming/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-QuickSort-QuickSelect" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/04/20/QuickSort-QuickSelect/">QuickSort &amp; QuickSelect</a>
-    </h1>
-  
-
-        
-        <a href="/2017/04/20/QuickSort-QuickSelect/" class="archive-article-date">
-  	<time datetime="2017-04-20T14:15:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-20</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="QuickSort"><a href="#QuickSort" class="headerlink" title="QuickSort"></a>QuickSort</h3><blockquote>
-<p>快速排序</p>
-</blockquote>
-<p>三个要注意的点，都写在程序里了。</p>
-        
-          <a class="article-more-a" href="/2017/04/20/QuickSort-QuickSelect/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Algorithm</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/04/20/QuickSort-QuickSelect/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-360暑期实习面试复盘" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/04/15/360暑期实习面试复盘/">360暑期实习面试复盘</a>
-    </h1>
-  
-
-        
-        <a href="/2017/04/15/360暑期实习面试复盘/" class="archive-article-date">
-  	<time datetime="2017-04-15T11:54:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ul>
-<li>时间：2017.4.14，面试时间约一个小时</li>
-<li>地点：360大厦</li>
-<li>岗位：360人工智能研究院机器学习岗</li>
-<li>简历：机器学习简历</li>
-<li>感觉：略惨，还有很多地方需要加强</li>
-</ul>
-<p>这算是参加的第一次暑期实习的大规模面试吧！整个一个大屋子，很多个面试桌和面试官，去了等待叫号，会告诉你去哪个面试桌面试。感觉到这么大的场景中还多少有一点紧张，一面大概45分钟到一个小时，二面比较快，半个小时到40分钟的样子吧。</p>
-        
-          <a class="article-more-a" href="/2017/04/15/360暑期实习面试复盘/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">面试复盘</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/04/15/360暑期实习面试复盘/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
-    </nav>
+  
+
+  
+
   
 
 
@@ -1042,8 +392,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: true,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
