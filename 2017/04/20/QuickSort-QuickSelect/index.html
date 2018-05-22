@@ -224,7 +224,7 @@
 <p>给定一个序列，含有0，1，2。0代表red。1代表white。2代表blue。将数组按红白蓝的顺序排序。不允许用库中的排序函数</p>
 </blockquote>
 <p>思路：用一个i指针从左到右扫描，r记录红得个数，b记录蓝的个数，如果nums[i] == 0的话，就把r和i交换，并把r加1；如果是1，就不做，i++；如果是2，就把它换到最后边，并把b++。（每次r++后定位的就是下一个没排好的地方，如果是红，就搁到r，把r往后移，如果是1，r不动，等i碰到0的时候会换到r这个位置的。）</p>
-<p>要注意两点，如果<code>nums[i] == 2</code>，把2换到后面的时候，i–，因为不知道换回来的这个是啥，要重新判断。<br>第二，i应从0到<code>length - b</code>而不是到最后，后面的已经排好了，就不要再去交换了。</p>
+<p>要注意两点，如果<code>nums[i] == 2</code>，把2换到后面的时候，i—，因为不知道换回来的这个是啥，要重新判断。<br>第二，i应从0到<code>length - b</code>而不是到最后，后面的已经排好了，就不要再去交换了。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sortColors</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span> (nums == <span class="keyword">null</span>) &#123;</div><div class="line">            <span class="keyword">return</span>;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        <span class="keyword">int</span> i;</div><div class="line">        <span class="comment">// r和b记录red和blue的个数。因此第一个不是r的下标就是r，第一个不是b的下标为len-1-b;</span></div><div class="line">        <span class="keyword">int</span> r = <span class="number">0</span>, b = <span class="number">0</span>;</div><div class="line">        <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; nums.length - b; i++) &#123;</div><div class="line">            <span class="keyword">if</span> (nums[i] == <span class="number">0</span>) &#123;</div><div class="line">                swap(nums, i, r);</div><div class="line">                r++;</div><div class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (nums[i] == <span class="number">2</span>) &#123;</div><div class="line">                swap(nums, i, nums.length - <span class="number">1</span> - b);</div><div class="line">                b++;</div><div class="line">                i--;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span>[] A, <span class="keyword">int</span> i, <span class="keyword">int</span> j)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> temp = A[i];</div><div class="line">        A[i] = A[j];</div><div class="line">        A[j] = temp;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h3 id="Sort-Colors-II-LintCode"><a href="#Sort-Colors-II-LintCode" class="headerlink" title="Sort Colors II(LintCode)"></a>Sort Colors II(LintCode)</h3><blockquote>
 <p>Given an array of n objects with k different colors (numbered from 1 to k), sort them so that objects of the same color are adjacent, with the colors in the order 1, 2, … k.</p>
@@ -387,7 +387,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2017 Sammy Wang
+    		&copy; 2018 Sammy Wang
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -503,11 +503,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Spark</a>
+                <a href="javascript:void(0)" class="js-tag color1">shell</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">shell</a>
+                <a href="javascript:void(0)" class="js-tag color1">Spark</a>
               </li>
              
               <li class="article-tag-list-item">
