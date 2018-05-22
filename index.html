@@ -197,35 +197,9 @@
 <h4 id="Degree-Centrality"><a href="#Degree-Centrality" class="headerlink" title="Degree Centrality"></a>Degree Centrality</h4><p>Degree Centrality是最简单的衡量节点重要性的算法之一。主要的依据为节点的度，即节点的度越大，影响性越大。为了在不同的图中进行比较，一般会使用归一化的度中心性，除以图节点的数目。</p>
 <script type="math/tex; mode=display">DC(i)=\frac{k_i}{n-1}</script><p>上式中，\(k_i\)代表节点i的度。n代表图节点数目。</p>
 <p>GraphX中，可以直接调用<code>graph.degrees</code>方法来获取每个节点的度，调用<code>graph.numVertices</code>方法来获取整个图的节点数目，<code>map</code>一下即可得到每个节点的degree centrality</p>
-<h4 id="Local-Rank"><a href="#Local-Rank" class="headerlink" title="Local Rank"></a>Local Rank</h4><p>Degree Centrality只考虑了一阶邻居的信息，Local Rank考虑了每个节点4阶邻居的信息。一个点，直接邻居（一阶邻居）的数量叫做度，邻居的邻居的数量为二阶邻居信息。Local Rank定义为4阶邻居的数量：</p>
-<script type="math/tex; mode=display">LR(i)=\sum_{j\in{\Gamma_i}}Q(j)</script><script type="math/tex; mode=display">Q(j)=\sum_{j\in{\Gamma_j}}R(k)</script><p>上式中，\(\Gamma_i\)代表点i的邻居集合，$R(k)$代表该点一阶邻居和二阶邻居的数量和。因此$Q(j)$可以视作三阶邻居的数量，LR则为四阶邻居数量，也就是LocalRank值。</p>
-<p>LocalRank是在无向图中的一种节点重要性评估方式，考虑了该点周围的点的数量。</p>
-<p>GraphX中，使用<code>aggregateMessages</code>函数可以搜集邻居的信息，通过搜集并求和一阶邻居的度数，可以得到二阶邻居数目，再搜集一次，可以得到三阶邻居数目，直到最终得到LR值。</p>
-<h4 id="Cluster-Rank"><a href="#Cluster-Rank" class="headerlink" title="Cluster Rank"></a>Cluster Rank</h4><p>Cluster Rank不仅考虑点的邻居数量，而且考虑了该点周围的点的紧密性。Clustering Coefficient是基于点所在的triangle count计算出来的系数，越高代表这个点跟它的邻居联系越紧密。联系越紧密，代表它们处于同一个cluster的可能性越大，相反向外散播的能力越弱，因此在cluster rank中，使用了\(f(c_i)=10^{-c_i}\)来使其变为负相关。</p>
-<p>Clustering Coefficient的定义为：</p>
-<script type="math/tex; mode=display">c_i=\frac{|\lbrace(j\rightarrow k)|j,k \in {\Gamma_i^{out}}\rbrace|}{k_i^{out}(k_i^{out} - 1)}</script><p>上式中，分子代表该点的三角形数量（triangle count），如果该点与它的两个邻居之间两两都有连接，则构成一个三角形。k代表邻居个数，out代表出度。</p>
-<p>graphX已经实现了triangleCount算法，可以直接求得点的三角形数。其他同LocalRank搜集邻居信息算出即可。</p>
-<h4 id="Page-Rank"><a href="#Page-Rank" class="headerlink" title="Page Rank"></a>Page Rank</h4><p>Page Rank算法最早是Google搜索引擎用来对网页进行排序的。它是一个迭代性的算法，初始状态所有节点PR值都为1，然后每次迭代节点会将自己的PR值沿着边的out方向分发出去，同时也会受到边in方向其他点发送过来的PR值，一轮迭代后重新计算每个点的PR值，然后进入下一轮迭代。等到n次迭代整个图结构稳定时，每个点的PR值即可用来排序。</p>
-<p>因此，i点在t时刻的PR值定义为：</p>
-<script type="math/tex; mode=display">PR_i(t)=\sum_{j=1}^n a_{ji} \frac{PR_j(t-1)}{k_j^{out}}</script><p>这里\(a_{ji}\)代表该点的邻接矩阵。</p>
-<p>然而，PageRank有一种特殊情况在于，当遇到出度为0的节点时，PR值只能进不能出，传播过程中断，有可能导致无法收敛的情况。为了解决这一问题，引入一个jumping factor，使得每次迭代每个点以<code>s</code>的概率传播PR值，<code>(1-s)</code>的概率随机跳转到一个页面。公式变为：</p>
-<script type="math/tex; mode=display">PR_i(t)=s\sum_{j=1}^n a_{ji} \frac{PR_j(t-1)}{k_j^{out}} + (1-s)\frac{1}{n}</script><h4 id="Coreness-K-Core"><a href="#Coreness-K-Core" class="headerlink" title="Coreness(K-Core)"></a>Coreness(K-Core)</h4><p>Coreness又叫做k-core decomposition。主要思路是看一个点在图中的深度来衡量节点重要性。K-core分解算法的基本思想为，首先，把孤立的点（即无连接）全都去掉，此为<code>k=0</code>，即深度为0。然后去掉度为1的点，去掉这些度为1的点以及他们的边，此时更新剩余图中节点的度，如果还有度为1的点，继续去掉，直到图中所有节点的度都大于1为止。这些去掉的点<code>k=1</code>。然后再去掉度为二的点，如此迭代，直到最后剩下一些点，他们的深度最大，如果再把k值加一，所有点都将消失，这些点便是图中最核心的点。</p>
-<p>此方法可以在较低时间复杂度内得到所有点的Coreness值，可以用作节点重要性排序。同时亦可用作图中寻找深度为k的重要节点组成的子图。</p>
-<p>另外，有文献证明[2]，迭代的求点高阶的H-index值，经过有限的步数，最终该值将收敛于此点的Coreness。</p>
-<p>详见参考文献。</p>
-<h4 id="H-index"><a href="#H-index" class="headerlink" title="H-index"></a>H-index</h4><p>一个点的H-index定义为该点能找到这么一个最大的h能满足它至少有h个邻居拥有不小于h的度。</p>
-<p>H-index最初被用来衡量学术论文引用量的影响度。</p>
-<p>我们定义一个Operater H 来计算一个点的H-index，那么它的h值应为：</p>
-<script type="math/tex; mode=display">h_i=H(k_{j1}, k_{j2}, k_{j3},\ldots,k_{jk_i})</script><p>其中，k代表i的各个邻居的度。\(v_i\)点的零阶(zero-order) H-index定义为\(h_i^{(0)}=k_i\)，它的n阶 H-index的值可以递归的定义为：</p>
-<script type="math/tex; mode=display">h_i^{(n)}=H(k_{j1}^{n-1}, k_{j2}^{n-1}, k_{j3}^{n-1},\ldots,k_{jk_i}^{n-1})</script><p>传统意义上的H-index为一阶H-index即\(h_i=h_i^{(1)}\)。<br>有文献证明[2]经过有限的步数，每一个点的H-indices，即\(h_i^{(0)},h_i^{(1)},h_i^{(2)},\ldots\)将会收敛到它的coreness上。<strong>这个思路可以用于Coreness算法的实现！</strong></p>
-<p>因此，degree, classical H-index, coreness是把点进行H operator运算的初态，中间态和稳定态。同时，各阶的H-indices都可用于节点重要性的衡量。</p>
-<h4 id="Betweenness"><a href="#Betweenness" class="headerlink" title="Betweenness"></a>Betweenness</h4><p>Betweenness在中文中好像叫介数，分为点介数和边介数，分别用来衡量点的重要性和边的重要性。</p>
-<p>点介数定义为任意两点间的最短路径中经过该点的最短路径占所有最短路径的比例</p>
-<script type="math/tex; mode=display">BC(i)=\sum_{i\neq s,i\neq t,s\neq t} \frac{g_{st}^i}{g_{st}}</script><p>\(g_{st}\)代表s到t的最短路径数量，\(g_{st}^i\)代表经过点i的最短路径数量。</p>
-<p>直观的理解，就是寻找一些关键的桥接点，很多点之间的连接或最短路径都要经过这一个点的话，那么这个点的betweenness就会高。</p>
-<h3 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h3><p>[1] Lü L, Chen D, Ren X L, et al. Vital nodes identification in complex networks[J]. Physics Reports, 2016, 650:1-63.</p>
-<p>[2] Linyuan L, Tao Z, Zhang Q M, et al. The H-index of a network node and its relation to degree and coreness:[J]. Nature Communications, 2016, 7:10168.</p>
-
+        
+          <a class="article-more-a" href="/2018/05/22/图常用节点重要性算法总结/#more">more >></a>
+        
       
 
       

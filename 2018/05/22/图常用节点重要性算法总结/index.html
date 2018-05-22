@@ -18,7 +18,7 @@ DC(i)=\frac{k_i}{n-1">
 <meta property="og:description" content="最近在做图相关方面的东西，看了一些文献和综述。便总结了常用的评判图中节点重要性的算法原理及在Spark-GraphX上的实现思路。
 Degree CentralityDegree Centrality是最简单的衡量节点重要性的算法之一。主要的依据为节点的度，即节点的度越大，影响性越大。为了在不同的图中进行比较，一般会使用归一化的度中心性，除以图节点的数目。
 DC(i)=\frac{k_i}{n-1">
-<meta property="og:updated_time" content="2018-05-22T15:01:29.534Z">
+<meta property="og:updated_time" content="2018-05-22T15:04:41.894Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="图常用节点重要性算法总结">
 <meta name="twitter:description" content="最近在做图相关方面的东西，看了一些文献和综述。便总结了常用的评判图中节点重要性的算法原理及在Spark-GraphX上的实现思路。
@@ -205,6 +205,7 @@ DC(i)=\frac{k_i}{n-1">
 <h4 id="Degree-Centrality"><a href="#Degree-Centrality" class="headerlink" title="Degree Centrality"></a>Degree Centrality</h4><p>Degree Centrality是最简单的衡量节点重要性的算法之一。主要的依据为节点的度，即节点的度越大，影响性越大。为了在不同的图中进行比较，一般会使用归一化的度中心性，除以图节点的数目。</p>
 <script type="math/tex; mode=display">DC(i)=\frac{k_i}{n-1}</script><p>上式中，\(k_i\)代表节点i的度。n代表图节点数目。</p>
 <p>GraphX中，可以直接调用<code>graph.degrees</code>方法来获取每个节点的度，调用<code>graph.numVertices</code>方法来获取整个图的节点数目，<code>map</code>一下即可得到每个节点的degree centrality</p>
+<a id="more"></a>
 <h4 id="Local-Rank"><a href="#Local-Rank" class="headerlink" title="Local Rank"></a>Local Rank</h4><p>Degree Centrality只考虑了一阶邻居的信息，Local Rank考虑了每个节点4阶邻居的信息。一个点，直接邻居（一阶邻居）的数量叫做度，邻居的邻居的数量为二阶邻居信息。Local Rank定义为4阶邻居的数量：</p>
 <script type="math/tex; mode=display">LR(i)=\sum_{j\in{\Gamma_i}}Q(j)</script><script type="math/tex; mode=display">Q(j)=\sum_{j\in{\Gamma_j}}R(k)</script><p>上式中，\(\Gamma_i\)代表点i的邻居集合，$R(k)$代表该点一阶邻居和二阶邻居的数量和。因此$Q(j)$可以视作三阶邻居的数量，LR则为四阶邻居数量，也就是LocalRank值。</p>
 <p>LocalRank是在无向图中的一种节点重要性评估方式，考虑了该点周围的点的数量。</p>
