@@ -6,27 +6,14 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Dynamic Programming | Prestige</title>
+  <title>Tag: graph | Prestige</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="70. Climbing Stairs
-爬楼梯问题，一次能爬一级或者两级，问n阶台阶有几种走法
-
-思路，关键点在于，n阶台阶的走法，是（n-1)级台阶的走法加上(n-2)级台阶的走法。因此可以使用递归。但是递归通常会溢出，那么使用动态规划思想，记录下每级台阶的走法。">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Dynamic Programming">
-<meta property="og:url" content="http://yoursite.com/2017/04/20/Dynamic-Programming/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Prestige">
+<meta property="og:url" content="http://yoursite.com/tags/graph/index.html">
 <meta property="og:site_name" content="Prestige">
-<meta property="og:description" content="70. Climbing Stairs
-爬楼梯问题，一次能爬一级或者两级，问n阶台阶有几种走法
-
-思路，关键点在于，n阶台阶的走法，是（n-1)级台阶的走法加上(n-2)级台阶的走法。因此可以使用递归。但是递归通常会溢出，那么使用动态规划思想，记录下每级台阶的走法。">
-<meta property="og:updated_time" content="2017-04-20T14:18:09.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Dynamic Programming">
-<meta name="twitter:description" content="70. Climbing Stairs
-爬楼梯问题，一次能爬一级或者两级，问n阶台阶有几种走法
-
-思路，关键点在于，n阶台阶的走法，是（n-1)级台阶的走法加上(n-2)级台阶的走法。因此可以使用递归。但是递归通常会溢出，那么使用动态规划思想，记录下每级台阶的走法。">
+<meta name="twitter:title" content="Prestige">
   
     <link rel="alternative" href="/atom.xml" title="Prestige" type="application/atom+xml">
   
@@ -184,201 +171,68 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Dynamic-Programming" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      Dynamic Programming
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2018" class="archive-year">2018</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2018/05/22/图常用节点重要性算法总结/" class="archive-article-date">
+  	<time datetime="2018-05-22T14:59:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-22</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2018/05/22/图常用节点重要性算法总结/">图常用节点重要性算法总结</a>
     </h1>
   
 
-        
-        <a href="/2017/04/20/Dynamic-Programming/" class="archive-article-date">
-  	<time datetime="2017-04-20T14:17:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-20</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="70-Climbing-Stairs"><a href="#70-Climbing-Stairs" class="headerlink" title="70. Climbing Stairs"></a>70. Climbing Stairs</h3><blockquote>
-<p>爬楼梯问题，一次能爬一级或者两级，问n阶台阶有几种走法</p>
-</blockquote>
-<p>思路，关键点在于，n阶台阶的走法，是（n-1)级台阶的走法加上(n-2)级台阶的走法。因此可以使用递归。但是递归通常会溢出，那么使用动态规划思想，记录下每级台阶的走法。</p>
-<a id="more"></a>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//逆向走法</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">climbStairs</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</div><div class="line">        <span class="comment">// write your code here</span></div><div class="line">        <span class="keyword">int</span>[] map = <span class="keyword">new</span> <span class="keyword">int</span>[n+<span class="number">1</span>];</div><div class="line">        Arrays.fill(map, Integer.MIN_VALUE);</div><div class="line">        <span class="keyword">return</span> helper(n, map);</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">helper</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span>[] map)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span> (n &lt; <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">        <span class="keyword">if</span> (n == <span class="number">0</span>) &#123;</div><div class="line">            <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (map[n] &gt; -<span class="number">1</span>) &#123;</div><div class="line">            <span class="keyword">return</span> map[n];</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            map[n] = helper(n-<span class="number">1</span>, map) + helper(n-<span class="number">2</span>, map);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> map[n];</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">//正向走法：</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">climbStairs</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span> (n == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">        <span class="keyword">int</span>[] f = <span class="keyword">new</span> <span class="keyword">int</span>[n+<span class="number">1</span>];</div><div class="line">        f[<span class="number">0</span>] = <span class="number">1</span>;</div><div class="line">        f[<span class="number">1</span>] = <span class="number">1</span>;</div><div class="line">        </div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt; n + <span class="number">1</span>; i++) &#123;</div><div class="line">            f[i] = f[i-<span class="number">1</span>] + f[i-<span class="number">2</span>];</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> f[n];</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="64-Minimum-Path-Sum"><a href="#64-Minimum-Path-Sum" class="headerlink" title="64. Minimum Path Sum"></a>64. Minimum Path Sum</h3><blockquote>
-<p>Given a m x n grid filled with non-negative numbers, find a path from top left to bottom right which minimizes the sum of all numbers along its path.</p>
-<p>Note: You can only move either down or right at any point in time.</p>
-</blockquote>
-<p>思路，用一个二维矩阵记录到该点的最短路径，因为只能向右或想下走，因此递推公式为：<br><code>D[m][n] = min(D[m-1][n], D[m][n-1]) + value[m][n]</code>.即左边和上边的min加上该点的值。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//该方法使用了extra space，也可以不使用直接在原矩阵上修改</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">minPathSum</span><span class="params">(<span class="keyword">int</span>[][] grid)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> m = grid.length;</div><div class="line">        <span class="keyword">int</span> n = grid[<span class="number">0</span>].length;</div><div class="line">        </div><div class="line">        <span class="keyword">int</span>[][] D = <span class="keyword">new</span> <span class="keyword">int</span>[m][n];</div><div class="line">        D[<span class="number">0</span>][<span class="number">0</span>] = grid[<span class="number">0</span>][<span class="number">0</span>];</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt; n; j++) &#123;</div><div class="line">            D[<span class="number">0</span>][j] = D[<span class="number">0</span>][j-<span class="number">1</span>] + grid[<span class="number">0</span>][j];</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; m; i++) &#123;</div><div class="line">            D[i][<span class="number">0</span>] = D[i-<span class="number">1</span>][<span class="number">0</span>] + grid[i][<span class="number">0</span>];</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; m; i++) &#123;</div><div class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt; n; j++) &#123;</div><div class="line">                D[i][j] = Math.min(D[i-<span class="number">1</span>][j], D[i][j-<span class="number">1</span>]) + grid[i][j];</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> D[m-<span class="number">1</span>][n-<span class="number">1</span>];</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="62-Unique-Paths"><a href="#62-Unique-Paths" class="headerlink" title="62. Unique Paths"></a>62. Unique Paths</h3><blockquote>
-<p>找从左上角走到右下角的不同的路径有多少条</p>
-</blockquote>
-<p>思路：利用动态规划，每一个点的路径数等于左边点的路径数加上边点的路径数。其中最左边一列和最上边一行路径数都为1。递推公式为<code>D[m][n] = D[m-1][n] + D[m][n-1]</code>。<br>开二维数组记录即可。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">uniquePaths</span><span class="params">(<span class="keyword">int</span> m, <span class="keyword">int</span> n)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span>[][] D = <span class="keyword">new</span> <span class="keyword">int</span>[m][n];</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; i++) &#123;</div><div class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n; j++) &#123;</div><div class="line">                <span class="keyword">if</span> (i == <span class="number">0</span> || j== <span class="number">0</span>) &#123;</div><div class="line">                    D[i][j] = <span class="number">1</span>;</div><div class="line">                &#125; <span class="keyword">else</span> &#123;</div><div class="line">                    D[i][j] = D[i-<span class="number">1</span>][j] + D[i][j-<span class="number">1</span>];</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> D[m-<span class="number">1</span>][n-<span class="number">1</span>];</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>优化：上面的方法用了<code>O(m*n)</code>的space，可以优化到<code>O(min(m, n))</code>的space，考虑D[m][n]只有D[m-1][n]和D[m][n-1]有关，D[m][n-1]可以看成上一时刻的D[m][n]，因此用一维数组的空间即可。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">uniquePaths</span><span class="params">(<span class="keyword">int</span> m, <span class="keyword">int</span> n)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span>[] res = <span class="keyword">new</span> <span class="keyword">int</span>[n];</div><div class="line">        res[<span class="number">0</span>] = <span class="number">1</span>;</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; i++) &#123;</div><div class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt; n; j++) &#123;</div><div class="line">                res[j] = res[j - <span class="number">1</span>] + res[j];</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> res[n-<span class="number">1</span>];</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="63-Unique-Paths-II"><a href="#63-Unique-Paths-II" class="headerlink" title="63. Unique Paths II"></a>63. Unique Paths II</h3><blockquote>
-<p>在grid里有障碍导致不能通过</p>
-</blockquote>
-<p>思路一样，就是遇到障碍的时候把该点的路径置0即可，但是需要注意一点是j不能从1开始遍历了，因为也有可能在<code>j=0</code>的时候有障碍，所以都需要遍历。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">uniquePathsWithObstacles</span><span class="params">(<span class="keyword">int</span>[][] obstacleGrid)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> m = obstacleGrid.length;</div><div class="line">        <span class="keyword">int</span> n = obstacleGrid[<span class="number">0</span>].length;</div><div class="line">        </div><div class="line">        <span class="keyword">int</span>[] D = <span class="keyword">new</span> <span class="keyword">int</span>[n];</div><div class="line">        D[<span class="number">0</span>] = <span class="number">1</span>;</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; i++) &#123;</div><div class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n; j++) &#123;</div><div class="line">                <span class="keyword">if</span> (obstacleGrid[i][j] == <span class="number">1</span>) &#123;</div><div class="line">                    D[j] = <span class="number">0</span>;</div><div class="line">                &#125; <span class="keyword">else</span> <span class="keyword">if</span> (j &gt; <span class="number">0</span>) &#123;</div><div class="line">                    D[j] = D[j] + D[j-<span class="number">1</span>];</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> D[n-<span class="number">1</span>];</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="300-Longest-Increasing-Subsequence"><a href="#300-Longest-Increasing-Subsequence" class="headerlink" title="300. Longest Increasing Subsequence"></a>300. Longest Increasing Subsequence</h3><blockquote>
-<p>找一个序列中的最长子序列，返回它的长度。</p>
-</blockquote>
-<p>思路：O(n2)解法是，第n个数的最长子序列的长度应该为前面每一个比它小的数的最长子序列长度+1。这就是递推公式，外层大循环为第几个数，内层循环找n前面每一个比n小的数的最长子序列的长度，找到最长的+1。然后记得更新全局变量即可。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">lengthOfLIS</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span> (nums == <span class="keyword">null</span>) <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">        <span class="keyword">int</span> longest = <span class="number">0</span>;</div><div class="line">        <span class="keyword">int</span>[] dp = <span class="keyword">new</span> <span class="keyword">int</span>[nums.length];</div><div class="line">        </div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++) &#123;</div><div class="line">            <span class="comment">// 找到dp[0]到dp[i-1]中最大的升序序列长度且nums[j]&lt;nums[i]</span></div><div class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; i; j++) &#123;</div><div class="line">                <span class="keyword">if</span> (nums[j] &lt; nums[i]) &#123;</div><div class="line">                    dp[i] = Math.max(dp[i], dp[j]);</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">            dp[i]++;</div><div class="line">            longest = Math.max(longest, dp[i]);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> longest;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Algorithm</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Spark</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">graph</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">GraphX</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/04/20/Dynamic-Programming/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2017/04/20/Arrays-Two-pointers/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Arrays &amp; Two pointers
-        
-      </div>
-    </a>
   
   
-    <a href="/2017/04/20/QuickSort-QuickSelect/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">QuickSort &amp; QuickSelect</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-  
+    </div></section>
   
 
-  
-
-  
+    
 
 
           </div>
@@ -401,9 +255,9 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
