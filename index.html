@@ -173,6 +173,109 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-vultr科学上网" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/06/16/vultr科学上网/">vultr科学上网</a>
+    </h1>
+  
+
+        
+        <a href="/2019/06/16/vultr科学上网/" class="archive-article-date">
+  	<time datetime="2019-06-16T09:42:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="在Vultr（centos7）上安装shadowsock及Google-BBR实现全速科学上网"><a href="#在Vultr（centos7）上安装shadowsock及Google-BBR实现全速科学上网" class="headerlink" title="在Vultr（centos7）上安装shadowsock及Google BBR实现全速科学上网"></a>在Vultr（centos7）上安装shadowsock及Google BBR实现全速科学上网</h1><p>自己倒腾了很多遍vultr的vps了，每次有重大活动的时候，墙就加高了，之前的vps就一定又不能用了，原以为自己搭了vps是个一劳永逸的事情，现在发现，太天真。</p>
+<p>所以自己特意记下来搭建vps的记录，以防下次教程帖子都被删干净了。</p>
+<h3 id="1-deploy一个机器"><a href="#1-deploy一个机器" class="headerlink" title="1. deploy一个机器"></a>1. deploy一个机器</h3><p>越便宜越好，但是要看准不能是只有ipv6的，现在很多2.5刀的是只有ipv6，其实是没用的，再加ipv4地址还要加钱，不一定核算</p>
+<p>其次，deploy之后ping一下ip地址，要能ping通，ping不通就换一个，直到能ping通为止</p>
+<h3 id="2-设置SS"><a href="#2-设置SS" class="headerlink" title="2. 设置SS"></a>2. 设置SS</h3><p>1.登录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh root@&lt;ip&gt;</div></pre></td></tr></table></figure>
+<p>用户名和账号可以在配置里看到</p>
+<ol>
+<li>下载和配置ss</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">wget --no-check-certificate  https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks.sh</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">chmod +x shadowsocks.sh</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">./shadowsocks.sh 2&gt;&amp;1 | tee shadowsocks.log</div></pre></td></tr></table></figure>
+<ol>
+<li>运行时会让你设置密码和端口号，自行设置，设置完就配置成功</li>
+</ol>
+<h3 id="3-多用户配置方法-if-need"><a href="#3-多用户配置方法-if-need" class="headerlink" title="3. 多用户配置方法(if need)"></a>3. 多用户配置方法(if need)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vim /etc/shadowsocks.json</div></pre></td></tr></table></figure>
+<p>修改配置文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    &quot;server&quot;:&quot;45.77.237.99&quot;,  # 替换为你的ip    </div><div class="line">    &quot;local_address&quot;:&quot;127.0.0.1&quot;,</div><div class="line">    &quot;local_port&quot;:1080,</div><div class="line">    &quot;port_password&quot;:&#123;</div><div class="line">         &quot;8989&quot;:&quot;password0&quot;,             </div><div class="line">         &quot;9001&quot;:&quot;password1&quot;,</div><div class="line">         &quot;9002&quot;:&quot;password2&quot;,</div><div class="line">         &quot;9003&quot;:&quot;password3&quot;,</div><div class="line">         &quot;9004&quot;:&quot;password4&quot;</div><div class="line">    &#125;,</div><div class="line">    &quot;timeout&quot;:300,</div><div class="line">    &quot;method&quot;:&quot;aes-256-cfb&quot;,</div><div class="line">    &quot;fast_open&quot;: false</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>然后关闭防火墙：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">chkconfig iptables off</div></pre></td></tr></table></figure>
+<p>重启vps生效</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/etc/init.d/shadowsocks restart</div></pre></td></tr></table></figure>
+<h3 id="4-安装BBR加速"><a href="#4-安装BBR加速" class="headerlink" title="4. 安装BBR加速"></a>4. 安装BBR加速</h3><p>下载</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">wget --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh</div><div class="line">sh ./bbr.sh</div></pre></td></tr></table></figure>
+<p>查看内核版本是否 &gt; 4.9</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">uname -r</div></pre></td></tr></table></figure>
+<p>check一下，看返回是否是下面那些</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$sysctl net.ipv4.tcp_available_congestion_control</div><div class="line">&gt; net.ipv4.tcp_available_congestion_control = reno cubic bbr</div><div class="line"></div><div class="line">$sysctl net.core.default_qdisc</div><div class="line">&gt; net.core.default_qdisc = fq</div></pre></td></tr></table></figure>
+<p>grep一下，确认启动<code>lsmod | grep bbr</code></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">科学上网</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/06/16/vultr科学上网/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-图常用节点重要性算法总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -915,89 +1018,6 @@
 
 
   
-    <article id="post-360暑期实习面试复盘" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/04/15/360暑期实习面试复盘/">360暑期实习面试复盘</a>
-    </h1>
-  
-
-        
-        <a href="/2017/04/15/360暑期实习面试复盘/" class="archive-article-date">
-  	<time datetime="2017-04-15T11:54:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ul>
-<li>时间：2017.4.14，面试时间约一个小时</li>
-<li>地点：360大厦</li>
-<li>岗位：360人工智能研究院机器学习岗</li>
-<li>简历：机器学习简历</li>
-<li>感觉：略惨，还有很多地方需要加强</li>
-</ul>
-<p>这算是参加的第一次暑期实习的大规模面试吧！整个一个大屋子，很多个面试桌和面试官，去了等待叫号，会告诉你去哪个面试桌面试。感觉到这么大的场景中还多少有一点紧张，一面大概45分钟到一个小时，二面比较快，半个小时到40分钟的样子吧。</p>
-        
-          <a class="article-more-a" href="/2017/04/15/360暑期实习面试复盘/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">面试复盘</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/04/15/360暑期实习面试复盘/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1012,7 +1032,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2018 Sammy Wang
+    		&copy; 2019 Sammy Wang
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -1133,6 +1153,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Spark</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">科学上网</a>
               </li>
              
               <li class="article-tag-list-item">
